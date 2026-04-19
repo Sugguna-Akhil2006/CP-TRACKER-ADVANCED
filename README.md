@@ -158,7 +158,7 @@ crt-companion/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/crt-companion.git
+git clone https://github.com/Sugguna-Akhil2006/CP-TRACKER-ADVANCED
 cd crt-companion
 ```
 
