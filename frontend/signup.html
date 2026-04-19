@@ -158,26 +158,26 @@
 <h2 class="text-2xl font-headline font-bold text-on-surface">Create your account</h2>
 <p class="text-on-surface-variant text-sm">Start your journey to coding excellence today.</p>
 </div>
-<form class="space-y-5">
+<form class="space-y-5" action="/signup" method="post">
 <div class="space-y-2">
 <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-1">Full Name</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">person</span>
-<input class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-4 text-on-surface focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-outline-variant/50" placeholder="John Doe" type="text"/>
+<input name = "fullname" class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-4 text-on-surface focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-outline-variant/50" placeholder="John Doe" type="text"/>
 </div>
 </div>
 <div class="space-y-2">
 <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-1">University Email</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">school</span>
-<input class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-4 text-on-surface focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-outline-variant/50" placeholder="john@university.edu" type="email"/>
+<input name = "email" class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-4 text-on-surface focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-outline-variant/50" placeholder="john@university.edu" type="email"/>
 </div>
 </div>
 <div class="space-y-2">
 <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-1">Select Your Year</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">calendar_today</span>
-<select class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-10 text-on-surface focus:ring-1 focus:ring-primary/50 appearance-none transition-all">
+<select name = "year" class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-10 text-on-surface focus:ring-1 focus:ring-primary/50 appearance-none transition-all">
 <option disabled="" selected="" value="">Choose your academic year</option>
 <option>Freshman (Year 1)</option>
 <option>Sophomore (Year 2)</option>
@@ -192,7 +192,7 @@
 <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-1">Password</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">lock</span>
-<input class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-12 text-on-surface focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-outline-variant/50" placeholder="••••••••••••" type="password"/>
+<input name = "password" class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-12 text-on-surface focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-outline-variant/50" placeholder="••••••••••••" type="password"/>
 <button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface transition-colors" type="button">
 <span class="material-symbols-outlined text-xl">visibility</span>
 </button>
