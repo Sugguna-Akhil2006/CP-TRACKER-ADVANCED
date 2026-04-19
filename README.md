@@ -246,13 +246,13 @@ This project is licensed under the MIT License.
 
 **Sugguna Akhil**
 
-* LinkedIn: (add link)
-* GitHub: (add link)
+* LinkedIn: https://www.linkedin.com/in/sugguna-akhil-773a24367/
+* GitHub: https://github.com/Sugguna-Akhil2006
 
 **Yadagani Tejus**
 
-* LinkedIn: (add link)
-* GitHub: (add link)
+* LinkedIn: https://www.linkedin.com/in/yadagani-sai-tejus-02474a344/
+* GitHub: https://github.com/Tejus468
 
 
 ---
