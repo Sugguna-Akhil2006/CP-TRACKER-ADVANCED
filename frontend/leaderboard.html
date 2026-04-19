@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leaderboard | CodeSphere</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#0d6100",
+                        "surface-dim": "#0e0e0e",
+                        "surface-container-high": "#20201f",
+                        "outline-variant": "#484847",
+                        "primary-dim": "#6063ee",
+                        "on-secondary-container": "#e3fdff",
+                        "on-error": "#490013",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "tertiary": "#8eff71",
+                        "on-surface-variant": "#adaaaa",
+                        "surface-variant": "#262626",
+                        "tertiary-container": "#2ff801",
+                        "error-dim": "#d73357",
+                        "on-secondary-fixed-variant": "#005e64",
+                        "on-surface": "#ffffff",
+                        "outline": "#767575",
+                        "surface-bright": "#2c2c2c",
+                        "secondary-fixed-dim": "#00deec",
+                        "inverse-primary": "#494bd7",
+                        "secondary": "#00eefc",
+                        "primary": "#a3a6ff",
+                        "primary-fixed": "#9396ff",
+                        "primary-container": "#9396ff",
+                        "on-background": "#ffffff",
+                        "tertiary-dim": "#2be800",
+                        "on-primary-fixed": "#000000",
+                        "on-primary": "#0f00a4",
+                        "on-tertiary-fixed": "#064200",
+                        "surface-container-low": "#131313",
+                        "surface-tint": "#a3a6ff",
+                        "on-error-container": "#ffb2b9",
+                        "on-primary-container": "#0a0081",
+                        "error-container": "#a70138",
+                        "background": "#0e0e0e",
+                        "on-secondary": "#005359",
+                        "surface-container": "#1a1a1a",
+                        "tertiary-fixed-dim": "#2be800",
+                        "surface-container-highest": "#262626",
+                        "secondary-fixed": "#00eefc",
+                        "tertiary-fixed": "#2ff801",
+                        "surface-container-lowest": "#000000",
+                        "primary-fixed-dim": "#8387ff",
+                        "secondary-dim": "#00deec",
+                        "inverse-surface": "#fcf9f8",
+                        "on-secondary-fixed": "#003f43",
+                        "secondary-container": "#006970",
+                        "surface": "#0e0e0e",
+                        "inverse-on-surface": "#565555",
+                        "on-tertiary-fixed-variant": "#0d6200",
+                        "error": "#ff6e84",
+                        "on-tertiary-container": "#0b5800"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary/30">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#0e0e0e] shadow-[1px_0_0_0_rgba(255,255,255,0.05)] shadow-2xl shadow-indigo-500/5 flex flex-col py-8 z-50">
+<div class="px-6 mb-10">
+<span class="text-2xl font-bold bg-gradient-to-r from-[#a3a6ff] to-[#6063ee] bg-clip-text text-transparent">Neon Architect</span>
+<div class="flex items-center gap-3 mt-6 p-3 bg-surface-container rounded-xl">
+<img alt="User profile avatar" class="w-10 h-10 rounded-full object-cover bg-primary-dim" data-alt="close-up portrait of a young tech professional with short dark hair in a focused studio lighting environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCARm1hHXKIrYGvf7-w9jcf8yDfBDxPA3pCsm_Uev0CxzvePI8VmLD2nurCIpfjcH_5rqXvQfdd74FS7edKfNGYiLacz80zb_H9hNmHK-GW_ZTFOEN8cXAxngDx2STzzo-YPOprjdtjPcxIiH0x_gQ7Y1vmvrqDRdxvcgSLIRVOJjiLZEzkxY1CHjtHRZpAHe5YNdUFUaqrrtJnXa7n4YYeO4GNXI8D-chDnxcCL0vW-ymy4bUKtuPqgZw64ItgBISS-k9-A9Dyjw"/>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">Pro Coder</p>
+<p class="text-xs text-on-surface-variant truncate">Level 42 Architect</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] hover:bg-[#1a1a1a] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Space_Grotesk'] text-sm tracking-wide">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] hover:bg-[#1a1a1a] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">event_upcoming</span>
+<span class="font-['Space_Grotesk'] text-sm tracking-wide">Practice</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] hover:bg-[#1a1a1a] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-['Space_Grotesk'] text-sm tracking-wide">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-[#a3a6ff]/10 to-transparent text-[#a3a6ff] border-r-2 border-[#00eefc]" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-['Space_Grotesk'] text-sm tracking-wide">Leaderboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] hover:bg-[#1a1a1a] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-['Space_Grotesk'] text-sm tracking-wide">Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] hover:bg-[#1a1a1a] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Space_Grotesk'] text-sm tracking-wide">Profile</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full py-3 rounded-xl bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-bold active:scale-95 transition-transform">
+                Start Contest
+            </button>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-[#0e0e0e]/80 backdrop-blur-xl flex justify-between items-center px-8 w-[calc(100%-16rem)] z-40">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-headline font-bold tracking-tight text-on-surface">Campus Rankings</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center bg-surface-container-low px-4 py-2 rounded-full focus-within:ring-1 focus-within:ring-[#00eefc]/30">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-on-surface placeholder:text-outline" placeholder="Search students..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-gray-400 hover:text-[#00eefc] transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="text-gray-400 hover:text-[#00eefc] transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-8 min-h-[calc(100vh-4rem)]">
+<!-- Top 3 Podium -->
+<section class="grid grid-cols-3 gap-8 mb-12 items-end max-w-5xl mx-auto pt-8">
+<!-- Rank 2 -->
+<div class="flex flex-col items-center">
+<div class="relative mb-4">
+<div class="w-24 h-24 rounded-full p-1 bg-gradient-to-b from-outline-variant to-transparent">
+<img alt="Rank 2 Avatar" class="w-full h-full rounded-full object-cover" data-alt="portrait of a focused student with glasses in a library setting with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1N7727cdWADbWb_GBTPKp7UECLVDp2f3sl2sO-waArfAWa2V_tZmpTvUYLqpIScz_PxmCgd8RwEdZCMJ_2pO_JqN1M0PNa8LXIA8VvfqiHPafRjMq6hNUbxwAggD14jnwd-d7QkrVI3R-NZwx4ut-bVudsXZIGLPx0G_XtM-gjo7_wdhVy0DawWbZMmRSY5p3YBxECE6-vauzgkFADi6rBUFl0SLH8uuyXa_L7pRpZrvW1tWBZxR86pKyz17o37EUxAnSthIBaw"/>
+</div>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-surface-container-highest px-3 py-1 rounded-full text-xs font-bold border border-outline-variant">#2</div>
+</div>
+<h3 class="font-headline font-bold text-lg">Alex Rivera</h3>
+<p class="text-primary text-sm font-medium">CSE • 3rd Year</p>
+<div class="mt-4 w-full h-32 bg-surface-container/50 rounded-t-2xl flex flex-col justify-end p-4 border-t border-x border-outline-variant/20">
+<div class="text-center">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Rating</p>
+<p class="text-xl font-headline font-bold">2480</p>
+</div>
+</div>
+</div>
+<!-- Rank 1 (Hero) -->
+<div class="flex flex-col items-center">
+<div class="relative mb-6">
+<div class="absolute -inset-4 bg-primary/20 blur-2xl rounded-full"></div>
+<div class="w-32 h-32 rounded-full p-1.5 bg-gradient-to-tr from-secondary via-primary to-tertiary relative z-10 shadow-[0_0_30px_rgba(163,166,255,0.3)]">
+<img alt="Rank 1 Avatar" class="w-full h-full rounded-full object-cover" data-alt="professional headshot of a young woman with a confident smile in a modern office with neon blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7PXrzIWxUEhXI0xChGziyqjqZPcSEoaPCVQx_x9k9OMS6qk9KLcCvmwUkvq_LMNMtvQWQZbBrm71ytoVnXgB80N58YYelubDdD8HKQn1Q23p4rMCoYZv19g-hwpt1RfalVGsePJVNYHPx04k5UjyXyWfYMfxH6_EjaaXdT0uJikAPGtU26FMU1F7Pr8eMzV_H07UAHlAgZ9VP5CcV7AIy3_0IYJuWpHrcW5hFSbiiDFwrutCiK5Rqlt_MSuO63HIEn0ldzrMfEg"/>
+</div>
+<div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-secondary to-primary px-4 py-1.5 rounded-full text-sm font-bold text-on-primary-container z-20 shadow-lg">#1</div>
+</div>
+<h3 class="font-headline font-extrabold text-2xl tracking-tight">Sarah Chen</h3>
+<p class="text-secondary text-sm font-bold uppercase tracking-widest">IT • 4th Year</p>
+<div class="mt-6 w-full h-44 bg-surface-container rounded-t-3xl flex flex-col justify-end p-6 border-t border-x border-primary/20 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
+<div class="text-center relative z-10">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mb-1">Elite Rating</p>
+<p class="text-3xl font-headline font-black text-on-surface">2945</p>
+<div class="flex items-center justify-center gap-1 mt-2 text-tertiary">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-xs font-bold">+124 this week</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="flex flex-col items-center">
+<div class="relative mb-4">
+<div class="w-24 h-24 rounded-full p-1 bg-gradient-to-b from-orange-500/50 to-transparent">
+<img alt="Rank 3 Avatar" class="w-full h-full rounded-full object-cover" data-alt="candid shot of a creative looking student working on a laptop in a trendy cafe with warm atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6MoHlE8nV33T125jg65kNcUbVc4Imxw_PjQn-2jayyEdMbtzwyieLm1j6M5T3uMdVMM7zWloGHafsaeNo90ZiNxURFQ8Ck8aFg7ivdJu77OjmaorX04y-Iaro5HmaXWSiYFs28L8cadm3qvATLukRsN2vuagFgquP0GMfHhwoRMVoBapilbrbH5DkgfM7dS_3xAbUAx94j-O-KN7TUYPtWAIhgOT7u_SBwhxiozkvhDYjwe4LCmtgBCrbSRAyUFERFEajJqupwg"/>
+</div>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-surface-container-highest px-3 py-1 rounded-full text-xs font-bold border border-outline-variant">#3</div>
+</div>
+<h3 class="font-headline font-bold text-lg">Marcus Thorne</h3>
+<p class="text-primary text-sm font-medium">ECE • 4th Year</p>
+<div class="mt-4 w-full h-28 bg-surface-container/50 rounded-t-2xl flex flex-col justify-end p-4 border-t border-x border-outline-variant/20">
+<div class="text-center">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Rating</p>
+<p class="text-xl font-headline font-bold">2312</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Filters & List -->
+<div class="max-w-6xl mx-auto bg-surface rounded-2xl overflow-hidden">
+<!-- Filter Bar -->
+<div class="flex flex-wrap items-center justify-between gap-4 p-6 bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<div class="flex bg-surface-container-lowest p-1 rounded-lg">
+<button class="px-4 py-1.5 rounded-md text-xs font-bold bg-primary text-on-primary shadow-lg">Weekly</button>
+<button class="px-4 py-1.5 rounded-md text-xs font-bold text-on-surface-variant hover:text-on-surface transition-colors">Monthly</button>
+<button class="px-4 py-1.5 rounded-md text-xs font-bold text-on-surface-variant hover:text-on-surface transition-colors">All-time</button>
+</div>
+<div class="h-8 w-px bg-outline-variant/30 mx-2"></div>
+<select class="bg-surface-container-lowest border-none text-xs font-bold rounded-lg focus:ring-1 focus:ring-primary/50 text-on-surface py-2 px-4 cursor-pointer">
+<option>All Branches</option>
+<option>CSE</option>
+<option>ECE</option>
+<option>IT</option>
+</select>
+<select class="bg-surface-container-lowest border-none text-xs font-bold rounded-lg focus:ring-1 focus:ring-primary/50 text-on-surface py-2 px-4 cursor-pointer">
+<option>All Years</option>
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+</select>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-sm">update</span>
+<span>Last updated: 2 mins ago</span>
+</div>
+</div>
+<!-- Leaderboard Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-on-surface-variant text-[10px] uppercase tracking-[0.2em] font-bold border-b border-outline-variant/10">
+<th class="px-8 py-5">Rank</th>
+<th class="px-8 py-5">Student</th>
+<th class="px-8 py-5 text-center">Streak</th>
+<th class="px-8 py-5 text-center">Solved</th>
+<th class="px-8 py-5 text-right">Rating</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<!-- Top performers get subtle highlights -->
+<tr class="group hover:bg-surface-container transition-all duration-200">
+<td class="px-8 py-4">
+<span class="text-lg font-headline font-black text-secondary">#4</span>
+</td>
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img alt="User Avatar" class="w-10 h-10 rounded-xl object-cover bg-surface-container-highest" data-alt="headshot of a young male student with an intense but friendly expression, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKeoUekC0MSXRAWCdyxFKCLQxXseCh4ZaT8ANj2OuhzwSZq07zz0LHANaruNlfabdhgdElCyzPDQF6hlvc3k4K-wvGmlyMi0Qz-QM8Vj1DL5Ky3vMhn7u5UWDAWtu3FiK1t8H2GbT6lednlD2KnQGFoOFjzX2owEReE84_OsyBLUp0oKm78nAxMDTt2FpMYeMPt8NRZsNH54vk237t9yhSIkveKnpKd_uZrhD80bLD_EWyNDJgjLyijBg38LwMMBOCYCB7-BXdCA"/>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Jordan Diab</p>
+<p class="text-xs text-on-surface-variant">CSE • 2nd Year</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-center">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-bold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                    24
+                                </div>
+</td>
+<td class="px-8 py-4 text-center">
+<span class="font-headline font-bold">1,482</span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="font-headline font-bold text-lg">2,205</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container transition-all duration-200 bg-primary/5">
+<td class="px-8 py-4">
+<span class="text-lg font-headline font-black text-on-surface/50">#5</span>
+</td>
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img alt="User Avatar" class="w-10 h-10 rounded-xl object-cover bg-surface-container-highest" data-alt="portrait of a focused female student wearing a headset, soft tech workspace background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsRZitN-BfAs6IDRAEnLZBng9SZucAAs_iSKPLiEUphot_DrYgKqnDWTHp8vhvWH8IEx_-jbi-EpXamhpiB-EsSzbX_B4XULtFUv7xOSwE9gmzyS2JkhtRhk_5hGldIfDWWVP1R4OxlY2AuY-aq64ci-v9dCBVxXPuv94VsuVQoFfVv9RHr7VSuv4gS_1R14WBSYFj0AnljfoNBfM3GZ4muhTausZT-g_unnl11UNcN3MNgfKW0vWRpUpdkn_o8dCfMuvb9GtS4A"/>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Amina L. (You)</p>
+<p class="text-xs text-on-surface-variant">IT • 4th Year</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-center">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                    18
+                                </div>
+</td>
+<td class="px-8 py-4 text-center">
+<span class="font-headline font-bold">1,390</span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="font-headline font-bold text-lg text-primary">2,188</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container transition-all duration-200">
+<td class="px-8 py-4">
+<span class="text-lg font-headline font-black text-on-surface/50">#6</span>
+</td>
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img alt="User Avatar" class="w-10 h-10 rounded-xl object-cover bg-surface-container-highest" data-alt="outdoor headshot of a student in a hoodie, urban background with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgdDLht6AOwhS_p8_SkAmzEOfzsKEfjWPzApgT_K9NzMBbQdpOmHz9bb5waMuGKZAUmIuJN3EZ75wQVRJyrffYYe3fHfuu7kj2pObd0OcIAc9WENUvlfoZcdylVnEYxMK3hP9FfT137salbbKDj0DeynNXog1A6UfNMvijtfGVSUxh7EpVBAKTUGsKXgtf_R7R_lvDPEzwwCYAHN4RAOcM3gV_x3lLOtczepP7w_gFR2PjwofTKL6yqsA4t27o5gMKE0e4bCZXNQ"/>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Kevin Kim</p>
+<p class="text-xs text-on-surface-variant">ECE • 3rd Year</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-center">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-bold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                    12
+                                </div>
+</td>
+<td class="px-8 py-4 text-center">
+<span class="font-headline font-bold">1,120</span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="font-headline font-bold text-lg">2,045</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container transition-all duration-200">
+<td class="px-8 py-4">
+<span class="text-lg font-headline font-black text-on-surface/50">#7</span>
+</td>
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img alt="User Avatar" class="w-10 h-10 rounded-xl object-cover bg-surface-container-highest" data-alt="smiling student with dark hair and a modern denim jacket, soft afternoon light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLu8A7e1Op_FOxpqJluIa1xcjiyjzZtCUdYjjIfg2TpiR0to6UvwO6CDoQ0OczpZB-XZTlzLPaKisjbWdN-Mu5lvLfc4jEWEsIHbs6p8vO2r8AgjUyrdHbZZ-q3jsdAgsgG18v2ttBgxM0qpfvhUM9XQhZ0dZTUbccwbEbso3KCEAUou8G_0j12Dy_CjtSTtq6K1rzOhMt6ioTocSsKauxRzOOJeGItviI2pTCmq5o4J7QVR4liRFsJXlGbp7kbj_VcdCDC53lag"/>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Sanjay Varma</p>
+<p class="text-xs text-on-surface-variant">CSE • 4th Year</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-center">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-on-surface-variant/10 text-on-surface-variant text-xs font-bold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                    5
+                                </div>
+</td>
+<td class="px-8 py-4 text-center">
+<span class="font-headline font-bold">1,098</span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="font-headline font-bold text-lg">1,990</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container transition-all duration-200">
+<td class="px-8 py-4">
+<span class="text-lg font-headline font-black text-on-surface/50">#8</span>
+</td>
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img alt="User Avatar" class="w-10 h-10 rounded-xl object-cover bg-surface-container-highest" data-alt="creative student with dyed hair and glasses, artistic studio environment with neon light spill" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc7NL_LQ0cLUaHGH0_8phM-Xwm7rY2lYDDOnp7p0EjzXTSuEcqcw6O8f41aHcxBoGKsjeTqHXUFB4EYZNDTWWTt3OyuHQm4B2L5YrkaYVBFI-tNApiFirWuNtDopwpt1_cfclmtT0a3xo5X_Xvw3elo8rZvQq2RDdAFUJpGFNcT8UrwdKMyAixQB-p4e4DDZpOOzw7uw7OIK7gwC-fIRcCkwdOnPVSWB_Ug3dvnLgGJAgFwbyv9l2RMgmMyJyE7I8ttQybIPM-WA"/>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Elena Moretti</p>
+<p class="text-xs text-on-surface-variant">IT • 1st Year</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-center">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-bold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                    31
+                                </div>
+</td>
+<td class="px-8 py-4 text-center">
+<span class="font-headline font-bold">945</span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="font-headline font-bold text-lg">1,822</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination/Footer -->
+<div class="p-6 bg-surface-container-low/30 flex justify-between items-center border-t border-outline-variant/5">
+<p class="text-xs text-on-surface-variant">Showing 1-50 of 1,240 campus participants</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-surface-container-highest hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container-highest font-bold text-xs">1</button>
+<button class="px-4 py-2 rounded-lg hover:bg-surface-container transition-colors font-bold text-xs">2</button>
+<button class="px-4 py-2 rounded-lg hover:bg-surface-container transition-colors font-bold text-xs">3</button>
+<button class="p-2 rounded-lg bg-surface-container-highest hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

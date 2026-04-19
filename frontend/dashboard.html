@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neon Architect | CodeSphere Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#0d6100",
+                        "surface-dim": "#0e0e0e",
+                        "surface-container-high": "#20201f",
+                        "outline-variant": "#484847",
+                        "primary-dim": "#6063ee",
+                        "on-secondary-container": "#e3fdff",
+                        "on-error": "#490013",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "tertiary": "#8eff71",
+                        "on-surface-variant": "#adaaaa",
+                        "surface-variant": "#262626",
+                        "tertiary-container": "#2ff801",
+                        "error-dim": "#d73357",
+                        "on-secondary-fixed-variant": "#005e64",
+                        "on-surface": "#ffffff",
+                        "outline": "#767575",
+                        "surface-bright": "#2c2c2c",
+                        "secondary-fixed-dim": "#00deec",
+                        "inverse-primary": "#494bd7",
+                        "secondary": "#00eefc",
+                        "primary": "#a3a6ff",
+                        "primary-fixed": "#9396ff",
+                        "primary-container": "#9396ff",
+                        "on-background": "#ffffff",
+                        "tertiary-dim": "#2be800",
+                        "on-primary-fixed": "#000000",
+                        "on-primary": "#0f00a4",
+                        "on-tertiary-fixed": "#064200",
+                        "surface-container-low": "#131313",
+                        "surface-tint": "#a3a6ff",
+                        "on-error-container": "#ffb2b9",
+                        "on-primary-container": "#0a0081",
+                        "error-container": "#a70138",
+                        "background": "#0e0e0e",
+                        "on-secondary": "#005359",
+                        "surface-container": "#1a1a1a",
+                        "tertiary-fixed-dim": "#2be800",
+                        "surface-container-highest": "#262626",
+                        "secondary-fixed": "#00eefc",
+                        "tertiary-fixed": "#2ff801",
+                        "surface-container-lowest": "#000000",
+                        "primary-fixed-dim": "#8387ff",
+                        "secondary-dim": "#00deec",
+                        "inverse-surface": "#fcf9f8",
+                        "on-secondary-fixed": "#003f43",
+                        "secondary-container": "#006970",
+                        "surface": "#0e0e0e",
+                        "inverse-on-surface": "#565555",
+                        "on-tertiary-fixed-variant": "#0d6200",
+                        "error": "#ff6e84",
+                        "on-tertiary-container": "#0b5800"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel {
+            background: rgba(44, 44, 44, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary/30">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#0e0e0e] shadow-[1px_0_0_0_rgba(255,255,255,0.05)] z-50 flex flex-col py-8 font-['Space_Grotesk'] text-sm tracking-wide">
+<div class="px-6 mb-12">
+<div class="text-2xl font-bold bg-gradient-to-r from-[#a3a6ff] to-[#6063ee] bg-clip-text text-transparent">Neon Architect</div>
+<div class="flex items-center gap-3 mt-6">
+<img alt="User profile avatar" class="w-10 h-10 rounded-full bg-surface-container" data-alt="Cyberpunk style profile avatar of a young developer with neon blue lighting and digital HUD elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIw9UVze6dY3AVXYr8wPpKbguYHuO-f5S-4sq9yDfPBmIAlp6qBByM2j4Ixk7qQzqzEgIVa8qM3tRlxS2C6ynQjYJn-8-gZL3pih90YAuMOpaKxgO0tEkvsm2-NN0zJqtXs3gTRx0AasItROCtSTFctq_QXQOkENZ0DTECC67jebAKYjZVavxCcEZRqBD9xKt2AI1GUnVPzEW2Lu4NJGQRbWi1fWUdjBN65r5N8xR7MgH1vjRTY7KHVSpibbLpphaoCVrU2RMmeA"/>
+<div>
+<p class="text-on-surface font-bold text-sm">Neon Architect</p>
+<p class="text-on-surface-variant text-xs">Pro Coder</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#a3a6ff]/10 to-transparent text-[#a3a6ff] border-r-2 border-[#00eefc]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors hover:bg-[#1a1a1a]" href="#">
+<span class="material-symbols-outlined" data-icon="event_upcoming">event_upcoming</span>
+<span>Practice</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors hover:bg-[#1a1a1a]" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors hover:bg-[#1a1a1a]" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span>Leaderboard</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors hover:bg-[#1a1a1a]" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors hover:bg-[#1a1a1a]" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold rounded-lg active:scale-95 transition-transform">
+                Start Contest
+            </button>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 left-64 h-16 z-40 bg-[#0e0e0e]/80 backdrop-blur-xl flex justify-between items-center px-8 w-full border-none">
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-medium font-headline">CRT Companion</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center focus-within:ring-1 focus-within:ring-[#00eefc]/30 rounded-lg bg-surface-container px-3 py-1.5">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none text-sm text-on-surface placeholder:text-outline focus:ring-0 w-48" placeholder="Search algorithms..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-gray-400">
+<button class="hover:text-[#00eefc] transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="hover:text-[#00eefc] transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-24 pb-12 px-8 min-h-screen bg-surface-dim">
+<!-- Header -->
+<div class="mb-10">
+<h1 class="text-4xl font-bold font-headline tracking-tight text-on-surface mb-2">Good morning, Alex!</h1>
+<p class="text-on-surface-variant text-lg">Ready for today's grind? You're in the top 2% this week.</p>
+</div>
+<!-- Top Row Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<!-- Solved Count -->
+<div class="bg-surface-container p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="terminal">terminal</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium mb-1 uppercase tracking-wider">Total Problems Solved</p>
+<div class="text-5xl font-headline font-bold text-on-surface">245</div>
+<div class="mt-4 flex items-center text-tertiary text-xs gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+12 this week</span>
+</div>
+</div>
+<!-- Streak -->
+<div class="bg-surface-container p-6 rounded-xl relative overflow-hidden group border-b-2 border-error/30">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-error" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium mb-1 uppercase tracking-wider">Current Streak</p>
+<div class="flex items-baseline gap-2">
+<div class="text-5xl font-headline font-bold text-on-surface">15</div>
+<div class="text-2xl font-headline font-bold text-error">Days</div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="h-1.5 flex-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[15%] bg-gradient-to-r from-error to-error-dim shadow-[0_0_10px_rgba(255,110,132,0.5)]"></div>
+</div>
+<span class="material-symbols-outlined text-error text-xl" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</div>
+<!-- Next Session -->
+<div class="bg-surface-container p-6 rounded-xl relative overflow-hidden group">
+<p class="text-on-surface-variant text-sm font-medium mb-1 uppercase tracking-wider">Next CRT Session</p>
+<div class="text-2xl font-headline font-bold text-secondary mb-1">Wednesday, 2:00 PM</div>
+<div class="flex items-center gap-3 mt-4">
+<div class="flex flex-col items-center px-3 py-2 bg-surface-container-highest rounded-lg">
+<span class="text-xl font-bold font-headline">02</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Days</span>
+</div>
+<div class="text-xl font-bold opacity-30">:</div>
+<div class="flex flex-col items-center px-3 py-2 bg-surface-container-highest rounded-lg">
+<span class="text-xl font-bold font-headline">14</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Hrs</span>
+</div>
+<div class="text-xl font-bold opacity-30">:</div>
+<div class="flex flex-col items-center px-3 py-2 bg-surface-container-highest rounded-lg">
+<span class="text-xl font-bold font-headline">35</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Min</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Cards Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Recommended Problems -->
+<div class="lg:col-span-8 bg-surface-container p-8 rounded-xl shadow-2xl shadow-black/20">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-2xl font-headline font-bold flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+                        Recommended for Today
+                    </h2>
+<a class="text-sm text-primary hover:underline transition-all" href="#">View all library</a>
+</div>
+<div class="space-y-4">
+<!-- Problem 1 -->
+<div class="group flex items-center justify-between p-5 bg-surface-container-low hover:bg-surface-container-highest rounded-lg transition-all duration-300">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-highest group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</div>
+<div>
+<h3 class="text-lg font-medium text-on-surface">Matrix Path Optimization</h3>
+<div class="flex items-center gap-3 mt-1">
+<span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded bg-error-container text-on-error-container">Hard</span>
+<span class="text-xs text-on-surface-variant">Dynamic Programming</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden md:block">
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest text-right">Success Rate</p>
+<p class="text-sm font-medium text-right">42%</p>
+</div>
+<button class="px-6 py-2 bg-surface-bright text-on-surface font-semibold rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95">
+                                Solve
+                            </button>
+</div>
+</div>
+<!-- Problem 2 -->
+<div class="group flex items-center justify-between p-5 bg-surface-container-low hover:bg-surface-container-highest rounded-lg transition-all duration-300">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-highest group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+</div>
+<div>
+<h3 class="text-lg font-medium text-on-surface">Directed Acyclic Graph Sorter</h3>
+<div class="flex items-center gap-3 mt-1">
+<span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded bg-secondary-container text-on-secondary-container">Medium</span>
+<span class="text-xs text-on-surface-variant">Graphs</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden md:block">
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest text-right">Success Rate</p>
+<p class="text-sm font-medium text-right">68%</p>
+</div>
+<button class="px-6 py-2 bg-surface-bright text-on-surface font-semibold rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95">
+                                Solve
+                            </button>
+</div>
+</div>
+<!-- Problem 3 -->
+<div class="group flex items-center justify-between p-5 bg-surface-container-low hover:bg-surface-container-highest rounded-lg transition-all duration-300">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-highest group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="text_fields">text_fields</span>
+</div>
+<div>
+<h3 class="text-lg font-medium text-on-surface">KMP Pattern Matching</h3>
+<div class="flex items-center gap-3 mt-1">
+<span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded bg-tertiary-container text-on-tertiary-container">Easy</span>
+<span class="text-xs text-on-surface-variant">Strings</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden md:block">
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest text-right">Success Rate</p>
+<p class="text-sm font-medium text-right">91%</p>
+</div>
+<button class="px-6 py-2 bg-surface-bright text-on-surface font-semibold rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95">
+                                Solve
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Weak Topics Analysis -->
+<div class="lg:col-span-4 bg-surface-container p-8 rounded-xl">
+<h2 class="text-xl font-headline font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="analytics">analytics</span>
+                    Skill Gap Analysis
+                </h2>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-sm mb-2">
+<span class="text-on-surface-variant">Dynamic Programming</span>
+<span class="font-bold text-error">40%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[40%] bg-error rounded-full"></div>
+</div>
+<p class="text-[10px] text-error/60 mt-1 uppercase">Critical Focus Needed</p>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-2">
+<span class="text-on-surface-variant">Graphs &amp; Trees</span>
+<span class="font-bold text-secondary">55%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[55%] bg-secondary rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-2">
+<span class="text-on-surface-variant">Strings &amp; Arrays</span>
+<span class="font-bold text-tertiary">85%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[85%] bg-tertiary rounded-full"></div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/10">
+<p class="text-xs text-on-surface-variant italic leading-relaxed">
+                            "Your recursive thinking is strong, but state transitions in DP need more practice. Try focusing on 2D matrix problems next."
+                        </p>
+</div>
+</div>
+</div>
+<!-- Recent Activity Timeline -->
+<div class="lg:col-span-12 bg-surface-container p-8 rounded-xl">
+<h2 class="text-xl font-headline font-bold mb-8">Recent Submissions</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low border-l-4 border-tertiary">
+<div class="text-xs text-on-surface-variant">2h ago</div>
+<div>
+<div class="text-sm font-bold">Invert Binary Tree</div>
+<div class="text-[10px] uppercase text-tertiary">Accepted</div>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low border-l-4 border-error">
+<div class="text-xs text-on-surface-variant">5h ago</div>
+<div>
+<div class="text-sm font-bold">Knapsack 0/1</div>
+<div class="text-[10px] uppercase text-error">Wrong Answer</div>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low border-l-4 border-tertiary">
+<div class="text-xs text-on-surface-variant">Yesterday</div>
+<div>
+<div class="text-sm font-bold">Two Sum IV</div>
+<div class="text-[10px] uppercase text-tertiary">Accepted</div>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low border-l-4 border-tertiary">
+<div class="text-xs text-on-surface-variant">Yesterday</div>
+<div>
+<div class="text-sm font-bold">Valid Palindrome</div>
+<div class="text-[10px] uppercase text-tertiary">Accepted</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Suppression Rule Followed (Not rendered on Dashboard/Details as per logic) -->
+</body></html>

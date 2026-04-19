@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#a70138",
+                        "secondary-fixed": "#00eefc",
+                        "outline": "#767575",
+                        "on-error": "#490013",
+                        "inverse-surface": "#fcf9f8",
+                        "tertiary-fixed-dim": "#2be800",
+                        "error": "#ff6e84",
+                        "on-error-container": "#ffb2b9",
+                        "secondary-container": "#006970",
+                        "on-secondary": "#005359",
+                        "surface-bright": "#2c2c2c",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-dim": "#2be800",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "primary": "#a3a6ff",
+                        "surface-container-low": "#131313",
+                        "secondary-dim": "#00deec",
+                        "on-primary-container": "#0a0081",
+                        "surface-dim": "#0e0e0e",
+                        "on-tertiary-fixed": "#064200",
+                        "on-secondary-fixed-variant": "#005e64",
+                        "surface-container-lowest": "#000000",
+                        "secondary-fixed-dim": "#00deec",
+                        "on-surface-variant": "#adaaaa",
+                        "background": "#0e0e0e",
+                        "on-secondary-fixed": "#003f43",
+                        "inverse-on-surface": "#565555",
+                        "on-tertiary-fixed-variant": "#0d6200",
+                        "surface": "#0e0e0e",
+                        "secondary": "#00eefc",
+                        "on-surface": "#ffffff",
+                        "tertiary": "#8eff71",
+                        "on-tertiary": "#0d6100",
+                        "surface-container": "#1a1a1a",
+                        "surface-container-highest": "#262626",
+                        "on-primary": "#0f00a4",
+                        "surface-container-high": "#20201f",
+                        "error-dim": "#d73357",
+                        "on-tertiary-container": "#0b5800",
+                        "primary-fixed": "#9396ff",
+                        "on-background": "#ffffff",
+                        "tertiary-fixed": "#2ff801",
+                        "outline-variant": "#484847",
+                        "tertiary-container": "#2ff801",
+                        "primary-dim": "#6063ee",
+                        "surface-variant": "#262626",
+                        "surface-tint": "#a3a6ff",
+                        "primary-container": "#9396ff",
+                        "on-secondary-container": "#e3fdff",
+                        "inverse-primary": "#494bd7",
+                        "primary-fixed-dim": "#8387ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(163, 166, 255, 0.15);
+        }
+        .glass-panel {
+            backdrop-filter: blur(16px);
+            background: rgba(26, 26, 26, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- Login Page Context: Shell Suppression Logic applied (Login is a transactional task) -->
+<main class="relative min-h-screen flex items-center justify-center p-6 overflow-hidden">
+<!-- Abstract Background Elements -->
+<div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px]"></div>
+<!-- Center Login Card -->
+<div class="relative z-10 w-full max-w-md">
+<div class="flex flex-col items-center mb-10">
+<div class="mb-4">
+<span class="text-4xl font-black bg-gradient-to-r from-primary to-primary-dim bg-clip-text text-transparent font-headline tracking-tighter">CRT Companion</span>
+</div>
+<p class="text-on-surface-variant font-label tracking-wide text-sm">ACCESS THE COMPETITIVE ARCHIVE</p>
+</div>
+<div class="glass-panel border border-outline-variant/20 rounded-xl p-8 neon-glow">
+<h1 class="text-2xl font-headline font-bold mb-2 text-on-surface">Welcome back</h1>
+<p class="text-on-surface-variant text-sm mb-8">Please enter your details to sign in.</p>
+<form class="space-y-6">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block text-xs font-medium text-on-surface-variant uppercase tracking-widest px-1" for="email">Email Address</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary/50 focus:ring-1 focus:ring-secondary/50 transition-all" id="email" name="email" placeholder="coder@crt.io" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<label class="block text-xs font-medium text-on-surface-variant uppercase tracking-widest" for="password">Password</label>
+<a class="text-xs text-primary-fixed hover:text-primary transition-colors" href="#">Forgot?</a>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary/50 focus:ring-1 focus:ring-secondary/50 transition-all" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Sign In Button -->
+<button class="w-full bg-gradient-to-r from-primary to-primary-dim text-on-primary-fixed font-headline font-bold py-3 rounded-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-[0.98] transition-all" type="submit">
+                        Sign In
+                    </button>
+</form>
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/20"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase tracking-widest">
+<span class="px-3 bg-[#1a1a1a] text-on-surface-variant">Or continue with</span>
+</div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 bg-surface-container-high hover:bg-surface-bright border border-outline-variant/10 py-2.5 rounded-lg transition-all active:scale-95">
+<img alt="Google" class="w-5 h-5 opacity-80" data-alt="Google colorful logo icon on transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHyLKW9AlVGsRKuuigG6GkwK1hh3zg9mwWd2KJYiAtDc6-AwMC4938bCT9BacFHX72TC0nrrWb-NFx5qwlZKjmAbd6EskJOLBiXMGjIHb8ER8jPhBfcRybOsVOuS28q_cpaXdvrPTwccICWVA1I2-fBmaGMYom7L2Z9RU17hxhh-D3vKlSpSXvGpxxytmXK30Iab_WA5KzvvdyfR3HHHHi3J4yY7cFyE-5dXVIRnB_fEfetUGpYu1lsP7DjqLAFHIUrd5Nw-sFjA"/>
+<span class="text-sm font-medium">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 bg-surface-container-high hover:bg-surface-bright border border-outline-variant/10 py-2.5 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="terminal">terminal</span>
+<span class="text-sm font-medium">GitHub</span>
+</button>
+</div>
+</div>
+<div class="mt-8 text-center">
+<p class="text-on-surface-variant text-sm">
+                    New to the companion? 
+                    <a class="text-secondary font-semibold hover:underline decoration-secondary/30 underline-offset-4 ml-1" href="#">Create an account</a>
+</p>
+</div>
+</div>
+<!-- Footnote Branding -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-30 text-[10px] tracking-[0.3em] font-medium text-on-surface-variant whitespace-nowrap">
+            SECURE ACCESS PORTAL // V2.4.0-STABLE
+        </div>
+</main>
+<!-- Visual Polish: Decorative Asymmetric Shapes -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] opacity-40">
+<div class="absolute top-[20%] left-[10%] w-[1px] h-[60%] bg-gradient-to-b from-transparent via-primary/40 to-transparent"></div>
+<div class="absolute top-[40%] right-[15%] w-[1px] h-[30%] bg-gradient-to-b from-transparent via-secondary/40 to-transparent"></div>
+</div>
+</body></html>

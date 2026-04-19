@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up | CRT Companion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#a70138",
+                        "secondary-fixed": "#00eefc",
+                        "outline": "#767575",
+                        "on-error": "#490013",
+                        "inverse-surface": "#fcf9f8",
+                        "tertiary-fixed-dim": "#2be800",
+                        "error": "#ff6e84",
+                        "on-error-container": "#ffb2b9",
+                        "secondary-container": "#006970",
+                        "on-secondary": "#005359",
+                        "surface-bright": "#2c2c2c",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-dim": "#2be800",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "primary": "#a3a6ff",
+                        "surface-container-low": "#131313",
+                        "secondary-dim": "#00deec",
+                        "on-primary-container": "#0a0081",
+                        "surface-dim": "#0e0e0e",
+                        "on-tertiary-fixed": "#064200",
+                        "on-secondary-fixed-variant": "#005e64",
+                        "surface-container-lowest": "#000000",
+                        "secondary-fixed-dim": "#00deec",
+                        "on-surface-variant": "#adaaaa",
+                        "background": "#0e0e0e",
+                        "on-secondary-fixed": "#003f43",
+                        "inverse-on-surface": "#565555",
+                        "on-tertiary-fixed-variant": "#0d6200",
+                        "surface": "#0e0e0e",
+                        "secondary": "#00eefc",
+                        "on-surface": "#ffffff",
+                        "tertiary": "#8eff71",
+                        "on-tertiary": "#0d6100",
+                        "surface-container": "#1a1a1a",
+                        "surface-container-highest": "#262626",
+                        "on-primary": "#0f00a4",
+                        "surface-container-high": "#20201f",
+                        "error-dim": "#d73357",
+                        "on-tertiary-container": "#0b5800",
+                        "primary-fixed": "#9396ff",
+                        "on-background": "#ffffff",
+                        "tertiary-fixed": "#2ff801",
+                        "outline-variant": "#484847",
+                        "tertiary-container": "#2ff801",
+                        "primary-dim": "#6063ee",
+                        "surface-variant": "#262626",
+                        "surface-tint": "#a3a6ff",
+                        "primary-container": "#9396ff",
+                        "on-secondary-container": "#e3fdff",
+                        "inverse-primary": "#494bd7",
+                        "primary-fixed-dim": "#8387ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 20px rgba(163, 166, 255, 0.15);
+        }
+        .neon-glow-secondary {
+            box-shadow: 0 0 20px rgba(0, 238, 252, 0.15);
+        }
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-dim selection:text-white overflow-x-hidden">
+<!-- Navigation suppressed per Destination Rule (Transactional Page) -->
+<main class="min-h-screen flex items-center justify-center relative p-6">
+<!-- Abstract Background Elements -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -right-[5%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[120px]"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.03]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhDvWPrGKYBX6k3kKWhp8-pPzY9UkvHAIAKYRElMY5Zs1be3R2YN8_PzAZ7Y04DFF_VjzUgC6E4ve_xXvUuVAD-QCcD3Lcm_k-98X9Xlpqi3eI-0JW7SQDKPsr7_wM--rBF7--sdkv9fAIc7PR306-9K7xd5PwrJ1tlg00ILQQHw2gn_2tD-rnAekbNGsAH_FzpoT0UhsIJHbyWt1Miq6-5CG-glFpfp-2y0W358y5SLB6ALezNjnn_tDa3OmRj9kScHTPDOadtw');"></div>
+</div>
+<div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+<!-- Value Proposition Section -->
+<div class="lg:col-span-7 space-y-8">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/20">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-xs font-label uppercase tracking-widest text-secondary">Join the Elite</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-headline font-bold leading-tight tracking-tighter">
+                        Level up your <br/>
+<span class="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] bg-clip-text text-transparent">coding legacy.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                        Join 5,000+ students leveling up their code. Access premium contest libraries, real-time analytics, and university leaderboards.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-6 rounded-xl bg-surface-container/50 border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<span class="material-symbols-outlined text-primary mb-3 text-3xl">terminal</span>
+<h3 class="font-headline font-bold text-lg">Curated Libraries</h3>
+<p class="text-sm text-on-surface-variant">Hand-picked problems from top competitive platforms.</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container/50 border border-outline-variant/10 hover:border-secondary/30 transition-all group">
+<span class="material-symbols-outlined text-secondary mb-3 text-3xl">insights</span>
+<h3 class="font-headline font-bold text-lg">Detailed Analytics</h3>
+<p class="text-sm text-on-surface-variant">Identify weaknesses with AI-driven performance tracking.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-4">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-background object-cover" data-alt="portrait of a young male developer smiling with short dark hair in a casual studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClAAnG_O8VW1BPvJcrCG1pzRp0yL5PyvtK3jJWD03hM65KToXgoh3EeM2D1U2AfQLfGc_4JeIryrkpVKVv-cKV0pcaEMPW0AmgTN97cm8vZCymF8T5xgaFo2ttpnkRCxA2ADqyrJCdj3JZoT_j5ej4JQzDneIqnTm69ebxivJ0J0qaz9dCYwje-GtrcTzzObEZyELC6wpXCoSa8HIBuyHoal9MyEN6M0o6Yy5ITO_iQWYRdFy2UGlFjVQ2hoQg7VWs8Yq6ro6jkg"/>
+<img class="w-10 h-10 rounded-full border-2 border-background object-cover" data-alt="close-up portrait of a professional woman with glasses and wavy hair looking confident" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAex8k9IqcWDfua7pdM81rJhfEJcVwgxq9BvAhe26N6__0nBLV35oe7SUbDbpmA6hk21b-BVk8uFcIXtOM78SnWAoeAd3E5hVbl6eAtjCo79Y07LQ-jAFfYmsX-VwS3EQGsKJMHR1EtbWy2qh9J-89i_QHq-btxPIQha5FEjIbsr0wk66cAxu9ZsBBwpfqdp3uB_78chx8UN_yk2VItMELS-OTPTa5DNkgnheDD_l629HgzmLwgBr2_ibmwTxFd6ne6O-7vpgPeIQ"/>
+<img class="w-10 h-10 rounded-full border-2 border-background object-cover" data-alt="headshot of a smiling young man with light beard and trendy haircut in natural outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOLXINJv_zXInU0Q9EmNsIb2yz2TVWWb4jC5wXlkFoQyaVbSneOzk9nYorRrjQ3cVdy0ZnN-D0E5Sb_8H6rG9JE94D3XdlphACmFIJXspis9At-SmL9c95e2a1zkVeYWQdPtzbyMSYiFFrOqf05rZv-bIbpFXp1pU-6I9RD2Lc4lAyLSV1vfnt2r6bAVATm1kCVj40YuPss86HeITrHPx0lWK1Fe2RTc1aStBrCQgWrnzsrGCef1kuPag28uM-N_RSuY4e0rxYLg"/>
+</div>
+<p class="text-sm font-label text-on-surface-variant">
+<span class="text-on-surface font-bold">5,000+</span> engineering students already onboard
+                    </p>
+</div>
+</div>
+<!-- Signup Form Section -->
+<div class="lg:col-span-5">
+<div class="glass-panel p-8 lg:p-10 rounded-2xl border border-outline-variant/10 neon-glow-primary">
+<div class="mb-8">
+<div class="flex items-center gap-2 mb-6">
+<div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl" style="font-variation-settings: 'FILL' 1;">code</span>
+</div>
+<span class="text-xl font-headline font-black tracking-tight text-on-surface">CRT Companion</span>
+</div>
+<h2 class="text-2xl font-headline font-bold text-on-surface">Create your account</h2>
+<p class="text-on-surface-variant text-sm">Start your journey to coding excellence today.</p>
+</div>
+<form class="space-y-5">
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-1">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">person</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-4 text-on-surface focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-outline-variant/50" placeholder="John Doe" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-1">University Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">school</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-4 text-on-surface focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-outline-variant/50" placeholder="john@university.edu" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-1">Select Your Year</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">calendar_today</span>
+<select class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-10 text-on-surface focus:ring-1 focus:ring-primary/50 appearance-none transition-all">
+<option disabled="" selected="" value="">Choose your academic year</option>
+<option>Freshman (Year 1)</option>
+<option>Sophomore (Year 2)</option>
+<option>Junior (Year 3)</option>
+<option>Senior (Year 4)</option>
+<option>Post-Graduate</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-1">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">lock</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-12 text-on-surface focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-outline-variant/50" placeholder="••••••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-primary-dim text-on-primary-fixed font-headline font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20" type="submit">
+                                Initialize Account
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<p class="text-center text-sm text-on-surface-variant">
+                            Already part of the network? 
+                            <a class="text-primary hover:text-secondary-fixed transition-colors font-medium" href="#">Login</a>
+</p>
+</form>
+<div class="mt-8 flex items-center gap-4">
+<div class="h-[1px] flex-1 bg-outline-variant/10"></div>
+<span class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant">Protocol Secure</span>
+<div class="h-[1px] flex-1 bg-outline-variant/10"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer for Transactional Page -->
+<footer class="w-full py-8 px-6 relative z-10">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-label text-on-surface-variant/50 uppercase tracking-widest">
+<p>© 2024 CRT Companion. Engineered for Excellence.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Documentation</a>
+<a class="hover:text-primary transition-colors" href="#">API</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Discord</a>
+</div>
+</div>
+</footer>
+</body></html>

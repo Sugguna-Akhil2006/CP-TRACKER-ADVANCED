@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CRT Companion | Master the Code</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#a70138",
+                        "secondary-fixed": "#00eefc",
+                        "outline": "#767575",
+                        "on-error": "#490013",
+                        "inverse-surface": "#fcf9f8",
+                        "tertiary-fixed-dim": "#2be800",
+                        "error": "#ff6e84",
+                        "on-error-container": "#ffb2b9",
+                        "secondary-container": "#006970",
+                        "on-secondary": "#005359",
+                        "surface-bright": "#2c2c2c",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-dim": "#2be800",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "primary": "#a3a6ff",
+                        "surface-container-low": "#131313",
+                        "secondary-dim": "#00deec",
+                        "on-primary-container": "#0a0081",
+                        "surface-dim": "#0e0e0e",
+                        "on-tertiary-fixed": "#064200",
+                        "on-secondary-fixed-variant": "#005e64",
+                        "surface-container-lowest": "#000000",
+                        "secondary-fixed-dim": "#00deec",
+                        "on-surface-variant": "#adaaaa",
+                        "background": "#0e0e0e",
+                        "on-secondary-fixed": "#003f43",
+                        "inverse-on-surface": "#565555",
+                        "on-tertiary-fixed-variant": "#0d6200",
+                        "surface": "#0e0e0e",
+                        "secondary": "#00eefc",
+                        "on-surface": "#ffffff",
+                        "tertiary": "#8eff71",
+                        "on-tertiary": "#0d6100",
+                        "surface-container": "#1a1a1a",
+                        "surface-container-highest": "#262626",
+                        "on-primary": "#0f00a4",
+                        "surface-container-high": "#20201f",
+                        "error-dim": "#d73357",
+                        "on-tertiary-container": "#0b5800",
+                        "primary-fixed": "#9396ff",
+                        "on-background": "#ffffff",
+                        "tertiary-fixed": "#2ff801",
+                        "outline-variant": "#484847",
+                        "tertiary-container": "#2ff801",
+                        "primary-dim": "#6063ee",
+                        "surface-variant": "#262626",
+                        "surface-tint": "#a3a6ff",
+                        "primary-container": "#9396ff",
+                        "on-secondary-container": "#e3fdff",
+                        "inverse-primary": "#494bd7",
+                        "primary-fixed-dim": "#8387ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0e0e0e;
+            color: #ffffff;
+        }
+        .headline-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-zinc-900/50 backdrop-blur-lg shadow-[0_8px_32px_rgba(99,102,241,0.05)] h-20">
+<div class="flex justify-between items-center px-8 h-full w-full max-w-7xl mx-auto">
+<div class="text-2xl font-black bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent headline-font">
+                CRT Companion
+            </div>
+<div class="hidden md:flex space-x-8">
+<a class="text-indigo-400 border-b-2 border-indigo-400 pb-1 headline-font font-bold tracking-tight" href="#">Features</a>
+<a class="text-zinc-400 hover:text-indigo-200 transition-colors headline-font font-bold tracking-tight" href="#">Library</a>
+<a class="text-zinc-400 hover:text-indigo-200 transition-colors headline-font font-bold tracking-tight" href="#">Contests</a>
+<a class="text-zinc-400 hover:text-indigo-200 transition-colors headline-font font-bold tracking-tight" href="#">Pricing</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-zinc-400 hover:text-indigo-200 transition-colors font-medium text-sm">Login</button>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-on-primary px-6 py-2.5 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">
+                    Sign Up
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-8">
+<div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/30 text-xs font-medium text-secondary">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span class="tracking-widest uppercase">The Neon Architect Experience</span>
+</div>
+<h1 class="text-6xl md:text-8xl headline-font font-black tracking-tighter leading-[0.9] text-on-surface">
+                    Master the Code. <br/>
+<span class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">Conquer the Campus.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                    The elite competitive programming companion engineered for the next generation of architects. Precision analytics meet gamified dominance.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-gradient-to-r from-primary to-primary-container rounded-xl font-bold text-lg shadow-xl shadow-primary/10 hover:shadow-primary/20 transition-all flex items-center justify-center gap-2">
+                        Get Started
+                        <span class="material-symbols-outlined">trending_flat</span>
+</button>
+<button class="px-8 py-4 bg-surface-container-high text-primary rounded-xl font-bold text-lg hover:bg-surface-bright transition-all border border-outline-variant/10">
+                        View Demo
+                    </button>
+</div>
+</div>
+<div class="relative lg:h-[600px] flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-[2rem] backdrop-blur-3xl border border-outline-variant/20 overflow-hidden">
+<img alt="Code visualization" class="w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="high-tech computer code abstract visualization with neon blue and purple light lines on a dark futuristic interface background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSYBiBKdOTM-jZ-hkfj1U9uliLdLLuQnU1o5qfpuXFiz5cN6ZCkBELJA2nEpZFy0qdgHKnxh1eO_KeGuThmJfgUI8P7-gHHwHZUWFeWSbXBRkaePCVIY_BQV6fi0qwB1kyUP1smmJviFNQ5jRNoMVbySZNAFLZcJIyONILWNuceO0EOLhAlIBJEytYparo4yAxzy4akZqfDzLPsvOzRW4CpCKvbT44iiBvVyEg3ejsjkjfx9YQEO8_p1MgBhH5ZoF95xRtpHeRGw"/>
+</div>
+<div class="relative bg-surface-container-highest/80 backdrop-blur-xl p-6 rounded-2xl border border-outline-variant/30 shadow-2xl w-full max-w-md transform lg:translate-x-12">
+<div class="flex items-center justify-between mb-6">
+<div class="flex space-x-2">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+</div>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant">Real-time Analysis</span>
+</div>
+<div class="space-y-4">
+<div class="h-2 bg-surface-container rounded-full w-3/4"></div>
+<div class="h-2 bg-surface-container rounded-full w-full"></div>
+<div class="h-2 bg-primary/20 rounded-full w-1/2 overflow-hidden relative">
+<div class="absolute inset-y-0 left-0 bg-primary w-2/3"></div>
+</div>
+<div class="flex gap-2 pt-4">
+<div class="h-20 w-1/3 bg-surface-container-low rounded-lg border border-outline-variant/20 flex flex-col items-center justify-center">
+<span class="text-secondary text-xl font-black">94%</span>
+<span class="text-[8px] uppercase text-on-surface-variant">Accuracy</span>
+</div>
+<div class="h-20 w-1/3 bg-surface-container-low rounded-lg border border-outline-variant/20 flex flex-col items-center justify-center">
+<span class="text-tertiary text-xl font-black">12ms</span>
+<span class="text-[8px] uppercase text-on-surface-variant">Runtime</span>
+</div>
+<div class="h-20 w-1/3 bg-surface-container-low rounded-lg border border-outline-variant/20 flex flex-col items-center justify-center">
+<span class="text-primary text-xl font-black">Elite</span>
+<span class="text-[8px] uppercase text-on-surface-variant">Rank</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Insights Section -->
+<section class="py-24 relative overflow-hidden bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<span class="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Engineered Intelligence</span>
+<h2 class="text-4xl md:text-5xl headline-font font-black leading-none mb-6">AI-Powered Insights</h2>
+<p class="text-on-surface-variant text-lg">We don't just show you what's wrong. We reveal the cognitive patterns behind your code, highlighting blind spots in data structures and algorithmic complexity before the competition does.</p>
+</div>
+<div class="flex gap-2">
+<div class="p-4 bg-surface-container rounded-xl">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<div class="p-4 bg-surface-container rounded-xl">
+<span class="material-symbols-outlined text-secondary">analytics</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Analysis Card 1 -->
+<div class="bg-surface p-8 rounded-2xl border border-outline-variant/10 group hover:border-primary/30 transition-all">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">query_stats</span>
+</div>
+<h3 class="text-xl headline-font font-bold mb-3">Topic Deep Dive</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Automatically detects weakness in Dynamic Programming, Graph Theory, or Number Theory based on historical performance.</p>
+<div class="pt-6 border-t border-outline-variant/10">
+<div class="flex justify-between text-xs text-on-surface-variant mb-2">
+<span>Recursion mastery</span>
+<span class="text-primary">82%</span>
+</div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[82%]"></div>
+</div>
+</div>
+</div>
+<!-- Analysis Card 2 -->
+<div class="bg-surface p-8 rounded-2xl border border-outline-variant/10 group hover:border-secondary/30 transition-all transform md:translate-y-8">
+<div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary">memory</span>
+</div>
+<h3 class="text-xl headline-font font-bold mb-3">Space Complexity</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Real-time memory profiling that catches inefficient allocation patterns that lead to TLE during actual contests.</p>
+<img alt="Server room blue lights" class="w-full h-32 object-cover rounded-lg mb-4 opacity-50" data-alt="abstract close up of high-performance server hardware with glowing blue indicator lights in a dark data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk6ZpxsjQ_5ZnoHRgdiEbK9utwxHTMo6lln21_bWLv_iO6rgMQBG64mOUia5tMtgF9RObq70D59a7W54Y9sJI0nb6iEoMhcAXflzLd3O1sYi5jePswU9zppcmhp_TC96VJzJhq_MITkt80L2VGInh265zfoQ-stnO-4E0d4Qnul-PN030LIJL-YE6Si__hA5KCy7JupCVTPvLqr2HTF7oxaMN0puBpTuqa_jsAG-IUPL0GTVAH9MYfkZtNQ1Eg6K6_66Zg3jkxgA"/>
+</div>
+<!-- Analysis Card 3 -->
+<div class="bg-surface p-8 rounded-2xl border border-outline-variant/10 group hover:border-tertiary/30 transition-all">
+<div class="w-12 h-12 bg-tertiary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+</div>
+<h3 class="text-xl headline-font font-bold mb-3">Optimal Solutions</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Compare your approach with the elite 1% of campus performers. Learn the specific tricks they use to shave off milliseconds.</p>
+<div class="flex items-center gap-4 mt-4">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface overflow-hidden bg-zinc-800"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface overflow-hidden bg-zinc-700"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface overflow-hidden bg-zinc-600"></div>
+</div>
+<span class="text-[10px] text-on-surface-variant">+42 Masters Online</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Competitive Edge (Leaderboard & Streaks) -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/20 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-48 h-48 bg-secondary/10 blur-[60px]"></div>
+<div class="flex items-center justify-between mb-8">
+<h4 class="headline-font font-bold text-2xl">Campus Global Rank</h4>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold rounded-full border border-secondary/20 uppercase tracking-tighter">Live Updates</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-black text-secondary">01</span>
+<div>
+<p class="font-bold">Arjun Sharma</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">IIT Bombay</p>
+</div>
+</div>
+<span class="text-primary font-bold">2,840 pts</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-primary/10 rounded-xl border border-primary/30 transform scale-105 shadow-xl shadow-primary/5">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-black text-primary">02</span>
+<div>
+<p class="font-bold">You (Master)</p>
+<p class="text-[10px] text-primary/80 uppercase tracking-widest">NIT Trichy</p>
+</div>
+</div>
+<span class="text-primary font-black">2,812 pts</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container/50 rounded-xl border border-outline-variant/5">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-black text-on-surface-variant">03</span>
+<div>
+<p class="font-bold text-on-surface-variant">Sarah Chen</p>
+<p class="text-[10px] text-on-surface-variant/60 uppercase tracking-widest">BITS Pilani</p>
+</div>
+</div>
+<span class="text-on-surface-variant">2,795 pts</span>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-center p-6 bg-surface-container-high rounded-2xl">
+<div class="text-center">
+<span class="block text-4xl mb-2">🔥</span>
+<span class="text-secondary-fixed text-4xl font-black block headline-font shadow-[0_0_15px_rgba(0,238,252,0.3)]">42</span>
+<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-[0.2em]">Day Daily Streak</span>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-8">
+<h2 class="text-4xl md:text-5xl headline-font font-black leading-tight">Your Competitive Edge</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                    Hone your skills in an environment designed for pressure. Our ranking system is recognized by top recruiters. Build a reputation that precedes you in every technical interview.
+                </p>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<div>
+<h5 class="font-bold">Prestige Badge System</h5>
+<p class="text-on-surface-variant text-sm">Unlock verifiable badges for specialized domains like Competitive Game Theory.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<div>
+<h5 class="font-bold">Heat Mapping</h5>
+<p class="text-on-surface-variant text-sm">Visualize your daily intensity and problem-solving velocity.</p>
+</div>
+</li>
+</ul>
+<button class="text-primary font-bold flex items-center gap-2 group transition-all">
+                    Explore Global Leaderboard
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Practice Perfection (Bento Grid) -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl headline-font font-black mb-6">Practice Perfection</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg">The structured path to technical mastery. No more random problem solving; just pure, focused progression.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+<!-- Bento Item 1: The Weekly Planner -->
+<div class="md:col-span-2 md:row-span-2 bg-surface p-8 rounded-3xl border border-outline-variant/10 flex flex-col justify-between overflow-hidden relative">
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div>
+<h3 class="text-2xl headline-font font-bold mb-4">Weekly Intelligent Planner</h3>
+<p class="text-on-surface-variant text-sm mb-8">Personalized roadmap based on upcoming campus placement dates and your current skill level.</p>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<div class="flex flex-col gap-2">
+<span class="text-[10px] text-center text-on-surface-variant">M</span>
+<div class="h-20 bg-primary/20 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">check</span></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[10px] text-center text-on-surface-variant">T</span>
+<div class="h-24 bg-primary rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-sm">bolt</span></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[10px] text-center text-on-surface-variant">W</span>
+<div class="h-16 bg-surface-container rounded-lg"></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[10px] text-center text-on-surface-variant">T</span>
+<div class="h-28 bg-secondary rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-on-secondary text-sm">trophy</span></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[10px] text-center text-on-surface-variant">F</span>
+<div class="h-20 bg-surface-container rounded-lg"></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[10px] text-center text-on-surface-variant">S</span>
+<div class="h-24 bg-surface-container rounded-lg"></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-[10px] text-center text-on-surface-variant">S</span>
+<div class="h-32 bg-tertiary rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-on-tertiary text-sm">workspace_premium</span></div>
+</div>
+</div>
+</div>
+<!-- Bento Item 2: Problem Library -->
+<div class="md:col-span-2 bg-surface p-8 rounded-3xl border border-outline-variant/10 flex items-center gap-6">
+<div class="flex-1">
+<h4 class="text-xl headline-font font-bold mb-2">Curated Library</h4>
+<p class="text-on-surface-variant text-sm">Over 5,000+ problems categorized by difficulty, company tags, and patterns.</p>
+</div>
+<div class="w-24 h-24 flex-shrink-0 bg-zinc-800 rounded-2xl overflow-hidden">
+<img alt="Abstract geometry" class="w-full h-full object-cover grayscale opacity-50" data-alt="minimalist architectural photo of white abstract geometric patterns with soft shadows and sharp angles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYnOBhGWptYLJ9amvSfx3P0cwiix921756-haPLNKDVgVJIPfvY03LtMO7nBOd6tkBUSv0PkZoph8DKPkbD5g-3vIV1RZ294BwbNsqeJz3B_EzAhr0etLPgSGI1s_dAT0j1pp5r9zXogvcS9Skw332FiYywNlecM6eHt4w7ZrjsTTFRVfninJgQYi8dlcMxl5W9iVIGLUxLsu-pyPMgmhFn0PVtGRou09rbfpgAkZrhtVgE3lc5NFWM1ZmMqUvH2Pb2bjJxA0yXw"/>
+</div>
+</div>
+<!-- Bento Item 3: Live Mentors -->
+<div class="bg-surface p-8 rounded-3xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary mb-4">group</span>
+<h4 class="font-bold mb-2 text-sm">Live Mentors</h4>
+<p class="text-on-surface-variant text-xs">24/7 access to experts from FAANG companies.</p>
+</div>
+<!-- Bento Item 4: Mock Contests -->
+<div class="bg-primary/5 p-8 rounded-3xl border border-primary/20">
+<span class="material-symbols-outlined text-primary mb-4">timer</span>
+<h4 class="font-bold mb-2 text-sm">Mock Contests</h4>
+<p class="text-on-surface-variant text-xs">Simulated environment with real-time pressure.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 relative">
+<div class="max-w-5xl mx-auto px-8">
+<div class="bg-gradient-to-br from-primary via-indigo-600 to-primary-dim rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-primary/20">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-6xl headline-font font-black mb-8 leading-tight">Ready to Transform Your <br/> Coding Journey?</h2>
+<p class="text-indigo-100 text-lg mb-10 max-w-2xl mx-auto font-medium opacity-90">Join 50,000+ students already mastering the competitive scene. Your future at a top-tier company starts here.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-white text-indigo-900 px-10 py-4 rounded-2xl font-black text-lg hover:bg-indigo-50 transition-all hover:scale-105 active:scale-95 shadow-xl">
+                            Join the Elite Now
+                        </button>
+<button class="bg-indigo-900/30 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-2xl font-black text-lg hover:bg-indigo-900/50 transition-all">
+                            Browse Courses
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 bg-zinc-950 border-t border-zinc-800/50">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 w-full max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<div class="text-lg font-bold text-zinc-100 mb-2 headline-font">CRT Companion</div>
+<p class="text-zinc-500 font-['Inter'] text-sm tracking-wide max-w-xs">
+                    The premium platform for competitive programming and technical excellence.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="text-zinc-500 hover:text-cyan-400 transition-colors font-['Inter'] text-sm tracking-wide" href="#">Documentation</a>
+<a class="text-zinc-500 hover:text-cyan-400 transition-colors font-['Inter'] text-sm tracking-wide" href="#">API</a>
+<a class="text-zinc-500 hover:text-cyan-400 transition-colors font-['Inter'] text-sm tracking-wide" href="#">Terms of Service</a>
+<a class="text-zinc-500 hover:text-cyan-400 transition-colors font-['Inter'] text-sm tracking-wide" href="#">Discord</a>
+</div>
+<div class="text-zinc-500 font-['Inter'] text-sm tracking-wide">
+                © 2024 CRT Companion. Engineered for Excellence.
+            </div>
+</div>
+</footer>
+</body></html>

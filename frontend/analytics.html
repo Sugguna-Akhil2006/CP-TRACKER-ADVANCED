@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary": "#0d6100",
+            "surface-dim": "#0e0e0e",
+            "surface-container-high": "#20201f",
+            "outline-variant": "#484847",
+            "primary-dim": "#6063ee",
+            "on-secondary-container": "#e3fdff",
+            "on-error": "#490013",
+            "on-primary-fixed-variant": "#0e009d",
+            "tertiary": "#8eff71",
+            "on-surface-variant": "#adaaaa",
+            "surface-variant": "#262626",
+            "tertiary-container": "#2ff801",
+            "error-dim": "#d73357",
+            "on-secondary-fixed-variant": "#005e64",
+            "on-surface": "#ffffff",
+            "outline": "#767575",
+            "surface-bright": "#2c2c2c",
+            "secondary-fixed-dim": "#00deec",
+            "inverse-primary": "#494bd7",
+            "secondary": "#00eefc",
+            "primary": "#a3a6ff",
+            "primary-fixed": "#9396ff",
+            "primary-container": "#9396ff",
+            "on-background": "#ffffff",
+            "tertiary-dim": "#2be800",
+            "on-primary-fixed": "#000000",
+            "on-primary": "#0f00a4",
+            "on-tertiary-fixed": "#064200",
+            "surface-container-low": "#131313",
+            "surface-tint": "#a3a6ff",
+            "on-error-container": "#ffb2b9",
+            "on-primary-container": "#0a0081",
+            "error-container": "#a70138",
+            "background": "#0e0e0e",
+            "on-secondary": "#005359",
+            "surface-container": "#1a1a1a",
+            "tertiary-fixed-dim": "#2be800",
+            "surface-container-highest": "#262626",
+            "secondary-fixed": "#00eefc",
+            "tertiary-fixed": "#2ff801",
+            "surface-container-lowest": "#000000",
+            "primary-fixed-dim": "#8387ff",
+            "secondary-dim": "#00deec",
+            "inverse-surface": "#fcf9f8",
+            "on-secondary-fixed": "#003f43",
+            "secondary-container": "#006970",
+            "surface": "#0e0e0e",
+            "inverse-on-surface": "#565555",
+            "on-tertiary-fixed-variant": "#0d6200",
+            "error": "#ff6e84",
+            "on-tertiary-container": "#0b5800"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {},
+          "fontFamily": {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0e0e0e;
+      font-family: 'Inter', sans-serif;
+      color: #ffffff;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #000000;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #262626;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#0e0e0e] shadow-[1px_0_0_0_rgba(255,255,255,0.05)] shadow-2xl shadow-indigo-500/5 flex flex-col py-8 z-50 overflow-y-auto custom-scrollbar">
+<div class="px-6 mb-10">
+<h1 class="text-2xl font-bold bg-gradient-to-r from-[#a3a6ff] to-[#6063ee] bg-clip-text text-transparent font-headline">Neon Architect</h1>
+<p class="text-xs text-gray-400 font-headline tracking-widest mt-1">PRO CODER</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors font-headline text-sm tracking-wide group" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors font-headline text-sm tracking-wide group" href="#">
+<span class="material-symbols-outlined text-xl">event_upcoming</span>
+<span>Practice</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-[#a3a6ff]/10 to-transparent text-[#a3a6ff] border-r-2 border-[#00eefc] font-headline text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors font-headline text-sm tracking-wide group" href="#">
+<span class="material-symbols-outlined text-xl">leaderboard</span>
+<span>Leaderboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors font-headline text-sm tracking-wide group" href="#">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors font-headline text-sm tracking-wide group" href="#">
+<span class="material-symbols-outlined text-xl">person</span>
+<span>Profile</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-dim text-on-primary-container font-headline font-bold rounded-xl active:scale-95 transition-transform shadow-lg shadow-primary/20">
+        Start Contest
+      </button>
+<div class="mt-8 flex items-center gap-3 px-2">
+<div class="h-10 w-10 rounded-full overflow-hidden bg-surface-container-highest border border-outline-variant/30">
+<img alt="User profile avatar" class="h-full w-full object-cover" data-alt="Stylized 3D avatar of a young tech professional with short dark hair and glasses on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcIKIg3txqLtmpDUTG0qM67VHvF9ywi9IC3naTGyhkUEvrS40vxvGMgR8JoVGmOViW8my2X8cRJWsTegyEUwsoPxpi3t7EIfMBc3yz3YFpIbvZadcFP_D8gVztG1eIAAUzjYPPUQKsgyM0vurpC8i7Bqhf5CtIN0c1FiuCu9NGwfsGYqe0R_L2HP_3oDf14i8MWsTLYoXbXlwDU3Cd8pxJyEA5k7LViGLulfnzdnRym1664OyT_iMfsnq6R3gvl6S73D-z4SdRNw"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-sm font-headline font-bold truncate">Felix Architect</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Gold Tier</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 h-16 z-40 bg-[#0e0e0e]/80 backdrop-blur-xl flex justify-between items-center px-8 w-full">
+<div class="flex items-center">
+<h2 class="text-xl font-headline font-bold text-primary tracking-tight">Performance Analytics</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group focus-within:ring-1 focus-within:ring-[#00eefc]/30 rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="bg-surface-container-lowest border-none rounded-lg py-2 pl-10 pr-4 w-64 text-sm focus:ring-0 placeholder:text-outline text-on-surface" placeholder="Search metrics..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-gray-400">
+<button class="hover:text-[#00eefc] transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="hover:text-[#00eefc] transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-8 min-h-[calc(100vh-64px)] bg-surface text-on-surface font-body">
+<!-- Hero / Insight Section -->
+<div class="grid grid-cols-12 gap-6 mb-8">
+<div class="col-span-12 lg:col-span-8 bg-surface-container rounded-xl p-8 relative overflow-hidden flex flex-col justify-center">
+<!-- Abstract Decoration -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-secondary/5 rounded-full blur-3xl -ml-24 -mb-24"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-2 py-1 bg-secondary/20 text-secondary text-[10px] font-bold rounded uppercase tracking-widest">AI Insight</span>
+</div>
+<h3 class="text-3xl font-headline font-semibold mb-3 max-w-2xl">"Your speed in DP is improving, but try more Graph problems."</h3>
+<p class="text-on-surface-variant text-lg max-w-xl">Based on your last 12 sessions, you're solving dynamic programming problems 15% faster than last month. However, your success rate on 'Shortest Path' algorithms is below your current tier average.</p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 bg-gradient-to-br from-surface-container-high to-surface-container rounded-xl p-8 flex flex-col justify-between">
+<div>
+<p class="text-sm text-on-surface-variant font-headline uppercase tracking-widest mb-1">Current Rating</p>
+<h4 class="text-5xl font-headline font-extrabold text-primary">2,482</h4>
+</div>
+<div class="mt-6 flex items-center gap-4">
+<div class="h-2 flex-1 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4 shadow-[0_0_10px_rgba(0,238,252,0.5)]"></div>
+</div>
+<span class="text-xs font-bold text-secondary">TOP 2%</span>
+</div>
+<div class="mt-4 flex justify-between items-end">
+<div class="text-on-surface-variant text-xs">Next Rank: <span class="text-on-surface font-semibold">Grandmaster</span></div>
+<div class="text-tertiary flex items-center gap-1 text-sm font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+            +142 this month
+          </div>
+</div>
+</div>
+</div>
+<!-- Charts Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Line Chart: Rating Progress -->
+<div class="col-span-12 lg:col-span-7 bg-surface-container rounded-xl p-6">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h5 class="text-lg font-headline font-bold">Rating Evolution</h5>
+<p class="text-xs text-on-surface-variant">Performance across Codeforces &amp; LeetCode (90 Days)</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-surface-container-highest text-xs rounded-md text-primary font-medium">All Time</button>
+<button class="px-3 py-1 text-xs rounded-md text-on-surface-variant hover:bg-surface-container-highest transition-colors">90D</button>
+</div>
+</div>
+<div class="h-64 w-full relative">
+<!-- SVG Mockup for Line Chart -->
+<svg class="w-full h-full" preserveaspectratio="none">
+<defs>
+<lineargradient id="gradientLine" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#a3a6ff" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#a3a6ff" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#262626" stroke-dasharray="4" stroke-width="1" x1="0" x2="100%" y1="20%" y2="20%"></line>
+<line stroke="#262626" stroke-dasharray="4" stroke-width="1" x1="0" x2="100%" y1="40%" y2="40%"></line>
+<line stroke="#262626" stroke-dasharray="4" stroke-width="1" x1="0" x2="100%" y1="60%" y2="60%"></line>
+<line stroke="#262626" stroke-dasharray="4" stroke-width="1" x1="0" x2="100%" y1="80%" y2="80%"></line>
+<!-- Area Fill -->
+<path class="w-full h-full" d="M0,200 L100,180 L200,190 L300,150 L400,160 L500,120 L600,100 L700,80 L800,110 L900,60 L1000,50 L1000,256 L0,256 Z" fill="url(#gradientLine)" style="transform: scaleX(1); width: 100%; height: 100%; transform-box: fill-box;"></path>
+<!-- Main Line -->
+<path d="M0,200 L100,180 L200,190 L300,150 L400,160 L500,120 L600,100 L700,80 L800,110 L900,60 L1000,50" fill="none" stroke="#a3a6ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Data points -->
+<circle cx="1000" cy="50" fill="#00eefc" r="4"></circle>
+<circle cx="1000" cy="50" fill="#00eefc" fill-opacity="0.2" r="10"></circle>
+</svg>
+<div class="absolute top-[40px] right-0 translate-x-1/2 -translate-y-full bg-secondary text-on-primary-container px-2 py-1 rounded text-[10px] font-bold">
+            2,482
+          </div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-on-surface-variant uppercase tracking-widest px-2">
+<span>April</span>
+<span>May</span>
+<span>June</span>
+<span>July</span>
+</div>
+</div>
+<!-- Topic-wise Breakdown: Horizontal Bars -->
+<div class="col-span-12 lg:col-span-5 bg-surface-container rounded-xl p-6">
+<h5 class="text-lg font-headline font-bold mb-1">Skill Distribution</h5>
+<p class="text-xs text-on-surface-variant mb-6">Mastery by algorithm category</p>
+<div class="space-y-5">
+<!-- Topic Row -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium">Arrays &amp; Strings</span>
+<span class="text-xs text-on-surface-variant font-bold">142 Solved</span>
+</div>
+<div class="h-3 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%] rounded-full"></div>
+</div>
+</div>
+<!-- Topic Row -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium">Math &amp; Combinatorics</span>
+<span class="text-xs text-on-surface-variant font-bold">98 Solved</span>
+</div>
+<div class="h-3 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[65%] rounded-full"></div>
+</div>
+</div>
+<!-- Topic Row -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium">Dynamic Programming</span>
+<span class="text-xs text-on-surface-variant font-bold">76 Solved</span>
+</div>
+<div class="h-3 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary-dim w-[45%] rounded-full"></div>
+</div>
+</div>
+<!-- Topic Row -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium">Graph Theory</span>
+<span class="text-xs text-on-surface-variant font-bold">34 Solved</span>
+</div>
+<div class="h-3 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-on-secondary-fixed-variant w-[20%] rounded-full"></div>
+</div>
+</div>
+<!-- Topic Row -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium">Data Structures</span>
+<span class="text-xs text-on-surface-variant font-bold">115 Solved</span>
+</div>
+<div class="h-3 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[75%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bar Chart: Activity -->
+<div class="col-span-12 bg-surface-container rounded-xl p-6">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h5 class="text-lg font-headline font-bold">Solving Frequency</h5>
+<p class="text-xs text-on-surface-variant">Daily problem volume over the last 30 days</p>
+</div>
+<div class="flex items-center gap-4 text-xs">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded bg-secondary"></div>
+<span class="text-on-surface-variant">Target (5/day)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded bg-primary"></div>
+<span class="text-on-surface-variant">Actual</span>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between h-40 w-full gap-2 px-2">
+<!-- Mocking Bars -->
+<div class="flex-1 bg-primary-dim h-[20%] rounded-t-sm opacity-30"></div>
+<div class="flex-1 bg-primary h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary-dim h-[40%] rounded-t-sm opacity-50"></div>
+<div class="flex-1 bg-secondary h-[95%] rounded-t-sm shadow-[0_-4px_12px_rgba(0,238,252,0.3)]"></div>
+<div class="flex-1 bg-primary h-[50%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[70%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary-dim h-[30%] rounded-t-sm opacity-50"></div>
+<div class="flex-1 bg-primary h-[85%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[45%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary-dim h-[15%] rounded-t-sm opacity-30"></div>
+<div class="flex-1 bg-secondary h-[100%] rounded-t-sm shadow-[0_-4px_12px_rgba(0,238,252,0.3)]"></div>
+<div class="flex-1 bg-primary h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[75%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary-dim h-[25%] rounded-t-sm opacity-30"></div>
+<div class="flex-1 bg-primary h-[55%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[80%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary h-[90%] rounded-t-sm shadow-[0_-4px_12px_rgba(0,238,252,0.3)]"></div>
+<div class="flex-1 bg-primary h-[35%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[65%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[70%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[45%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary-dim h-[20%] rounded-t-sm opacity-30"></div>
+<div class="flex-1 bg-primary h-[85%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary h-[95%] rounded-t-sm shadow-[0_-4px_12px_rgba(0,238,252,0.3)]"></div>
+<div class="flex-1 bg-primary h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[50%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[10%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[75%] rounded-t-sm"></div>
+</div>
+<div class="mt-4 flex justify-between text-[9px] text-on-surface-variant font-medium uppercase tracking-[0.2em]">
+<span>30 Days Ago</span>
+<span>15 Days Ago</span>
+<span>Today</span>
+</div>
+</div>
+</div>
+<!-- Overall Statistics Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+<div class="bg-surface-container p-6 rounded-xl border-l-4 border-primary">
+<p class="text-xs text-on-surface-variant font-headline uppercase tracking-widest mb-1">Total Solved</p>
+<div class="flex items-baseline gap-2">
+<h6 class="text-3xl font-headline font-bold">1,204</h6>
+<span class="text-xs text-tertiary font-bold">+24 this week</span>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-xl border-l-4 border-secondary">
+<p class="text-xs text-on-surface-variant font-headline uppercase tracking-widest mb-1">Current Streak</p>
+<div class="flex items-baseline gap-2">
+<h6 class="text-3xl font-headline font-bold">42 Days</h6>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-xl border-l-4 border-primary-dim">
+<p class="text-xs text-on-surface-variant font-headline uppercase tracking-widest mb-1">Avg. Solving Time</p>
+<div class="flex items-baseline gap-2">
+<h6 class="text-3xl font-headline font-bold">18m 45s</h6>
+<span class="text-xs text-tertiary font-bold">-2m avg</span>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-xl border-l-4 border-tertiary">
+<p class="text-xs text-on-surface-variant font-headline uppercase tracking-widest mb-1">Success Rate</p>
+<div class="flex items-baseline gap-2">
+<h6 class="text-3xl font-headline font-bold">92.4%</h6>
+<span class="text-xs text-on-surface-variant">Global: 76%</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

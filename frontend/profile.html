@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#0d6100",
+                        "surface-dim": "#0e0e0e",
+                        "surface-container-high": "#20201f",
+                        "outline-variant": "#484847",
+                        "primary-dim": "#6063ee",
+                        "on-secondary-container": "#e3fdff",
+                        "on-error": "#490013",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "tertiary": "#8eff71",
+                        "on-surface-variant": "#adaaaa",
+                        "surface-variant": "#262626",
+                        "tertiary-container": "#2ff801",
+                        "error-dim": "#d73357",
+                        "on-secondary-fixed-variant": "#005e64",
+                        "on-surface": "#ffffff",
+                        "outline": "#767575",
+                        "surface-bright": "#2c2c2c",
+                        "secondary-fixed-dim": "#00deec",
+                        "inverse-primary": "#494bd7",
+                        "secondary": "#00eefc",
+                        "primary": "#a3a6ff",
+                        "primary-fixed": "#9396ff",
+                        "primary-container": "#9396ff",
+                        "on-background": "#ffffff",
+                        "tertiary-dim": "#2be800",
+                        "on-primary-fixed": "#000000",
+                        "on-primary": "#0f00a4",
+                        "on-tertiary-fixed": "#064200",
+                        "surface-container-low": "#131313",
+                        "surface-tint": "#a3a6ff",
+                        "on-error-container": "#ffb2b9",
+                        "on-primary-container": "#0a0081",
+                        "error-container": "#a70138",
+                        "background": "#0e0e0e",
+                        "on-secondary": "#005359",
+                        "surface-container": "#1a1a1a",
+                        "tertiary-fixed-dim": "#2be800",
+                        "surface-container-highest": "#262626",
+                        "secondary-fixed": "#00eefc",
+                        "tertiary-fixed": "#2ff801",
+                        "surface-container-lowest": "#000000",
+                        "primary-fixed-dim": "#8387ff",
+                        "secondary-dim": "#00deec",
+                        "inverse-surface": "#fcf9f8",
+                        "on-secondary-fixed": "#003f43",
+                        "secondary-container": "#006970",
+                        "surface": "#0e0e0e",
+                        "inverse-on-surface": "#565555",
+                        "on-tertiary-fixed-variant": "#0d6200",
+                        "error": "#ff6e84",
+                        "on-tertiary-container": "#0b5800"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #0e0e0e; color: #ffffff; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(44, 44, 44, 0.4); backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden">
+<!-- SideNavBar (from JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#0e0e0e] shadow-[1px_0_0_0_rgba(255,255,255,0.05)] z-50 flex flex-col h-full py-8">
+<div class="px-6 mb-10">
+<h1 class="text-2xl font-bold bg-gradient-to-r from-[#a3a6ff] to-[#6063ee] bg-clip-text text-transparent font-headline">Neon Architect</h1>
+<p class="text-xs text-on-surface-variant tracking-widest mt-1 uppercase">Pro Coder</p>
+</div>
+<nav class="flex-1 space-y-1 px-4">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors font-headline text-sm tracking-wide group" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors font-headline text-sm tracking-wide group" href="#">
+<span class="material-symbols-outlined">event_upcoming</span> Practice
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors font-headline text-sm tracking-wide group" href="#">
+<span class="material-symbols-outlined">query_stats</span> Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors font-headline text-sm tracking-wide group" href="#">
+<span class="material-symbols-outlined">leaderboard</span> Leaderboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#a3a6ff] transition-colors font-headline text-sm tracking-wide group" href="#">
+<span class="material-symbols-outlined">notifications</span> Notifications
+            </a>
+<!-- Active State for Profile -->
+<a class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-[#a3a6ff]/10 to-transparent text-[#a3a6ff] border-r-2 border-[#00eefc] font-headline text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span> Profile
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 px-4 bg-gradient-to-r from-primary to-primary-dim rounded-lg text-on-primary font-bold text-sm active:scale-95 transition-transform">
+                Start Contest
+            </button>
+<div class="mt-6 flex items-center gap-3 p-3 rounded-xl bg-surface-container-low">
+<img alt="User profile avatar" class="w-10 h-10 rounded-full object-cover grayscale brightness-125" data-alt="portrait of a confident software engineer with modern tech accessories in a moody office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBroyrWle6Ul6q8-ZdcmWNVnmGt6p7VdvWiaskoyA3-_Oo7L7y-A8nBJj1I0ZRIRl-Lc2KFYvieAx0i5CTbbxGmWkXuwtA39gbwayJpihzNF-CO9LMUm72JUJT1fFyLTgzVb5um7-BLWu2ojPG1kfdqmhKHBOtM6IyPMZ221AZ_oSzpemuZtvjJnTN6rFrHmLIyA1WiIXFmCQIaCwyoiCYB2Ndh__zGnLw09KN2g0JylI0XJcL_zZCGabMUqPN3O90p8MfrzHsuyA"/>
+<div>
+<p class="text-xs font-bold">Alex Rivera</p>
+<p class="text-[10px] text-on-surface-variant">@rivera_codes</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar (from JSON) -->
+<header class="fixed top-0 right-0 left-64 h-16 z-40 bg-[#0e0e0e]/80 backdrop-blur-xl flex justify-between items-center px-8 w-full border-none">
+<div class="flex items-center">
+<span class="text-on-surface-variant font-headline text-sm">Profile / <span class="text-on-surface">Settings</span></span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center group">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-sm">search</span>
+<input class="bg-surface-container-lowest border-none rounded-full py-2 pl-10 pr-4 text-xs w-64 focus:ring-1 focus:ring-[#00eefc]/30 transition-all outline-none" placeholder="Search problems..." type="text"/>
+</div>
+<div class="flex gap-4 text-on-surface-variant">
+<button class="hover:text-[#00eefc] transition-colors"><span class="material-symbols-outlined">help_outline</span></button>
+<button class="hover:text-[#00eefc] transition-colors"><span class="material-symbols-outlined">settings</span></button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pl-64 pt-16 min-h-screen">
+<div class="max-w-7xl mx-auto p-8 space-y-8">
+<!-- Header Section: Bento-ish Profile Intro -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 glass-panel p-10 rounded-xl relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
+<!-- Background Accent -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative shrink-0">
+<div class="w-32 h-32 rounded-3xl overflow-hidden ring-4 ring-primary-dim/20">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="portrait of a confident software engineer with modern tech accessories in a moody office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6mdL6aSJjYEf7lFMfQoI29SUQUOzw997Xn6FkBAvdIO0N7isHEbKrXeSZUHQD--MFbx6__KqLAZNZx46nzWDwr7bri_UPCPU9yI57jw-SeBbaFXOfd6OGCXDwrOFxhuhClFUPJ8sK6cYvyoqAeQhTAIhR1rb28PfwLdlyp7LZuateTX9guGzbYtFLEiMO5_8yAZn2MQfM-oaU2ibjU23JWdJofTTfS179qq4DQRXnEVrRG1Xxwjj91XTsiemDDMhyVjespVCYEA"/>
+</div>
+<div class="absolute -bottom-2 -right-2 w-10 h-10 bg-secondary rounded-full flex items-center justify-center border-4 border-surface shadow-lg">
+<span class="material-symbols-outlined text-surface text-base" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="space-y-4 text-center md:text-left">
+<div>
+<h2 class="text-4xl font-bold font-headline tracking-tight text-on-surface">Alex Rivera</h2>
+<p class="text-secondary font-medium tracking-wide">Computer Science &amp; Engineering</p>
+</div>
+<div class="flex flex-wrap gap-4 justify-center md:justify-start">
+<span class="bg-surface-container px-4 py-1.5 rounded-full text-xs font-medium text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">school</span> Class of 2025
+                            </span>
+<span class="bg-surface-container px-4 py-1.5 rounded-full text-xs font-medium text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span> Stanford, CA
+                            </span>
+</div>
+</div>
+</div>
+<!-- Fast Actions -->
+<div class="bg-surface-container rounded-xl p-8 flex flex-col justify-between border border-outline-variant/10">
+<h3 class="font-headline font-bold text-lg mb-4">Quick Stats</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center p-3 bg-surface-container-low rounded-lg">
+<span class="text-sm text-on-surface-variant">Profile Viewability</span>
+<span class="text-xs text-tertiary">98% Complete</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-surface-container-low rounded-lg">
+<span class="text-sm text-on-surface-variant">Last Active</span>
+<span class="text-xs text-on-surface">2 mins ago</span>
+</div>
+</div>
+<button class="mt-6 w-full py-3 border border-primary/20 text-primary rounded-lg text-sm font-medium hover:bg-primary/5 transition-colors">
+                        Download Report
+                    </button>
+</div>
+</section>
+<!-- Stats Summary Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-primary">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold">Max Streak</p>
+<div class="flex items-baseline gap-2 mt-2">
+<h4 class="text-3xl font-headline font-bold">42</h4>
+<span class="text-secondary text-xs font-bold">Days</span>
+</div>
+<div class="mt-4 w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full shadow-[0_0_8px_rgba(0,238,252,0.5)]" style="width: 84%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-tertiary">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold">Total Points</p>
+<div class="flex items-baseline gap-2 mt-2">
+<h4 class="text-3xl font-headline font-bold">12,840</h4>
+</div>
+<p class="text-[10px] text-tertiary mt-4">+1,200 this week</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-secondary">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold">Global Rank</p>
+<div class="flex items-baseline gap-2 mt-2">
+<h4 class="text-3xl font-headline font-bold">#1,204</h4>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-4">Top 1.2% Worldwide</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-primary-dim">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold">Highest Rating</p>
+<div class="flex items-baseline gap-2 mt-2">
+<h4 class="text-3xl font-headline font-bold">2,185</h4>
+</div>
+<p class="text-[10px] text-primary-dim mt-4">Master Tier Achieved</p>
+</div>
+</section>
+<!-- Connected Platforms & Edit Profile Layout -->
+<section class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+<!-- Connected Platforms (3/5 width) -->
+<div class="lg:col-span-3 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-headline font-bold">Connected Platforms</h3>
+<button class="text-secondary text-xs hover:underline">Sync All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Codeforces Card -->
+<div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-colors group">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-surface-container-highest p-3 rounded-lg group-hover:bg-primary-dim transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">terminal</span>
+</div>
+<span class="bg-tertiary/10 text-tertiary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Synced</span>
+</div>
+<h4 class="font-bold text-lg">Codeforces</h4>
+<p class="text-xs text-on-surface-variant mb-4">Rating: 1942 (Candidate Master)</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-[10px] text-on-surface-variant">Last sync: 2h ago</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant">open_in_new</span>
+</div>
+</div>
+<!-- LeetCode Card -->
+<div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:border-secondary/40 transition-colors group">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-surface-container-highest p-3 rounded-lg group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-on-secondary-container">code_blocks</span>
+</div>
+<span class="bg-tertiary/10 text-tertiary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Synced</span>
+</div>
+<h4 class="font-bold text-lg">LeetCode</h4>
+<p class="text-xs text-on-surface-variant mb-4">Rating: 2185 (Guardian)</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-[10px] text-on-surface-variant">Last sync: 15m ago</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant">open_in_new</span>
+</div>
+</div>
+<!-- HackerRank Card -->
+<div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:border-on-surface-variant/40 transition-colors group">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-surface-container-highest p-3 rounded-lg group-hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface">account_circle</span>
+</div>
+<span class="bg-error/10 text-error text-[10px] font-bold px-2 py-0.5 rounded uppercase">Action Req.</span>
+</div>
+<h4 class="font-bold text-lg">HackerRank</h4>
+<p class="text-xs text-on-surface-variant mb-4">Re-authenticate to sync scores</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<button class="text-[10px] text-primary font-bold uppercase tracking-widest">Connect Account</button>
+</div>
+</div>
+<!-- Add Platform Empty Card -->
+<div class="bg-surface-container-low border border-dashed border-outline-variant p-6 rounded-xl flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">add_circle</span>
+<span class="text-xs font-medium text-on-surface-variant">Connect Another Platform</span>
+</div>
+</div>
+</div>
+<!-- Edit Profile (2/5 width) -->
+<div class="lg:col-span-2 space-y-6">
+<h3 class="text-xl font-headline font-bold">Account Settings</h3>
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/10">
+<form class="space-y-5">
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Full Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-3 px-4 text-sm text-on-surface focus:ring-1 focus:ring-secondary/40 outline-none transition-all" type="text" value="Alex Rivera"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Email Address</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-3 px-4 text-sm text-on-surface focus:ring-1 focus:ring-secondary/40 outline-none transition-all" type="email" value="alex.rivera@cs.stanford.edu"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">New Password</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-3 px-4 text-sm text-on-surface focus:ring-1 focus:ring-secondary/40 outline-none transition-all" placeholder="••••••••••••" type="password"/>
+</div>
+<div class="pt-4 space-y-3">
+<button class="w-full py-3 bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold rounded-lg text-sm hover:opacity-90 transition-opacity" type="submit">
+                                    Update Profile
+                                </button>
+<button class="w-full py-3 text-on-surface-variant font-medium text-sm hover:text-on-surface transition-colors" type="button">
+                                    Cancel Changes
+                                </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Aesthetic Floating Elements (Subtle Decorative Background) -->
+<div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/5 rounded-full blur-[120px] -z-10"></div>
+<div class="fixed top-[-10%] left-[10%] w-[30%] h-[30%] bg-primary/5 rounded-full blur-[120px] -z-10"></div>
+</body></html>
