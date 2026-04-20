@@ -47,7 +47,9 @@ def login():
     user = cptracker.query.filter_by(email=data["email"]).first()
     if user and user.password == data["password"]:
         return send_from_directory('frontend', 'dashboard.html')
-    return "Invalid credentials", 401
+        
+    return send_from_directory('frontend', 'login.html' , error = "Invalid email or password")
+    
 
 @app.route("/notifications")
 def notifications():
