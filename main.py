@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, request
+from flask import Flask, render_template, request, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import declarative_base, mapped_column, Mapped
 
@@ -21,47 +21,48 @@ class cptracker(db.Model):
 with app.app_context():
     db.create_all()
 
+# -------- ROUTES -------- #
+
 @app.route("/")
 def landing():
-    return send_from_directory('frontend', 'landing_page.html')
+    return render_template("/frontend/landing_page.html")
 
 @app.route("/analytics")
 def analytics():
-    return send_from_directory('frontend', 'analytics.html')
+    return render_template("/frontend/analytics.html")
 
 @app.route("/dashboard")
 def dashboard():
-    return send_from_directory('frontend', 'dashboard.html')
+    return render_template("/frontend/dashboard.html")
 
 @app.route("/leaderboard")
 def leaderboard():
-    return send_from_directory('frontend', 'leaderboard.html')
+    return render_template("/frontend/leaderboard.html")
 
 @app.route("/login")
 def login_page():
-    return send_from_directory('frontend', 'login.html')
+    return render_template("/frontend/login.html")
 
 @app.route("/login", methods=["POST"])
 def login():
     data = request.form
-    user = cptracker.query.filter_by(email=data["email"]).first()
-    if user and user.password == data["password"]:
-        return send_from_directory('frontend', 'dashboard.html')
-        
-    return send_from_directory('frontend', 'login.html' , error = "Invalid email or password")
+    with app.app_context():
+        result = db.execute(db.select(cptracker).where(cptracker.email == data["email"], cptracker.password == data["password"])).first()
+    if result:
+        user = result[0]
+        return render_template("/frontend/dashboard.html", user=user)
     
-
 @app.route("/notifications")
 def notifications():
-    return send_from_directory('frontend', 'notifications.html')
+    return render_template("/frontend/notifications.html")
 
 @app.route("/practice_planner")
 def practice_planner():
-    return send_from_directory('frontend', 'practice_planner.html')
+    return render_template("/frontend/practice_planner.html")
 
 @app.route("/profile")
 def profile():
-    return send_from_directory('frontend', 'profile.html')
+    return render_template("/frontend/profile.html")
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -75,8 +76,11 @@ def signup():
         )
         db.session.add(new_user)
         db.session.commit()
-        return send_from_directory('frontend', 'login.html')
-    return send_from_directory('frontend', 'signup.html')
+        return render_template("/frontend/login.html")
+
+    return render_template("/frontend/signup.html")
+
+# -------- RUN -------- #
 
 if __name__ == "__main__":
     app.run(debug=True)
