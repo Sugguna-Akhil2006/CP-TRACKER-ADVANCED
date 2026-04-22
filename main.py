@@ -33,7 +33,13 @@ def analytics():
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("/frontend/dashboard.html")
+    user_id = request.args.get("user_id")
+
+    if not user_id:
+        return render_template("frontend/login.html")
+
+    user = db.session.get(cptracker, int(user_id))
+    return render_template("frontend/dashboard.html", user=user)
 
 @app.route("/leaderboard")
 def leaderboard():
@@ -43,14 +49,23 @@ def leaderboard():
 def login_page():
     return render_template("/frontend/login.html")
 
+from flask import redirect, url_for
+
 @app.route("/login", methods=["POST"])
 def login():
     data = request.form
-    with app.app_context():
-        result = db.execute(db.select(cptracker).where(cptracker.email == data["email"], cptracker.password == data["password"])).first()
+
+    result = db.session.execute(
+        db.select(cptracker).where(
+            cptracker.email == data["email"],
+            cptracker.password == data["password"]
+        )
+    ).scalar()
+
     if result:
-        user = result[0]
-        return render_template("/frontend/dashboard.html", user=user)
+        return redirect(url_for("dashboard", user_id=result.id))  
+    else:
+        return render_template("frontend/login.html", error="Invalid email or password")
     
 @app.route("/notifications")
 def notifications():

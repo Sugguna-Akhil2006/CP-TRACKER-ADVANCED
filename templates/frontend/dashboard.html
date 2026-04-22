@@ -3,7 +3,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Neon Architect | CodeSphere Dashboard</title>
+<title>{{user.name}} | CRT Companion Dashboard</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -96,12 +96,10 @@
 <!-- SideNavBar Shell -->
 <aside class="h-screen w-64 fixed left-0 top-0 bg-[#0e0e0e] shadow-[1px_0_0_0_rgba(255,255,255,0.05)] z-50 flex flex-col py-8 font-['Space_Grotesk'] text-sm tracking-wide">
 <div class="px-6 mb-12">
-<div class="text-2xl font-bold bg-gradient-to-r from-[#a3a6ff] to-[#6063ee] bg-clip-text text-transparent">Neon Architect</div>
 <div class="flex items-center gap-3 mt-6">
 <img alt="User profile avatar" class="w-10 h-10 rounded-full bg-surface-container" data-alt="Cyberpunk style profile avatar of a young developer with neon blue lighting and digital HUD elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIw9UVze6dY3AVXYr8wPpKbguYHuO-f5S-4sq9yDfPBmIAlp6qBByM2j4Ixk7qQzqzEgIVa8qM3tRlxS2C6ynQjYJn-8-gZL3pih90YAuMOpaKxgO0tEkvsm2-NN0zJqtXs3gTRx0AasItROCtSTFctq_QXQOkENZ0DTECC67jebAKYjZVavxCcEZRqBD9xKt2AI1GUnVPzEW2Lu4NJGQRbWi1fWUdjBN65r5N8xR7MgH1vjRTY7KHVSpibbLpphaoCVrU2RMmeA"/>
 <div>
-<p class="text-on-surface font-bold text-sm">Neon Architect</p>
-<p class="text-on-surface-variant text-xs">Pro Coder</p>
+<p class="text-on-surface font-bold text-sm">{{user.name}}</p>
 </div>
 </div>
 </div>
@@ -173,7 +171,7 @@
 <span class="material-symbols-outlined text-6xl" data-icon="terminal">terminal</span>
 </div>
 <p class="text-on-surface-variant text-sm font-medium mb-1 uppercase tracking-wider">Total Problems Solved</p>
-<div class="text-5xl font-headline font-bold text-on-surface">245</div>
+<div class="text-5xl font-headline font-bold text-on-surface">{{ user.solvedcount }}</div>
 <div class="mt-4 flex items-center text-tertiary text-xs gap-1">
 <span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
 <span>+12 this week</span>
